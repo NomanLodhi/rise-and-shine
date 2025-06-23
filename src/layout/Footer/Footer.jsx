@@ -1,0 +1,133 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import TextAnimation from "../../components/TextAnimation/TextAnimation";
+
+import footerLogo from "/assets/img/icon/logo.png";
+
+const footerDataArray = [
+  {
+    className: "footer-info",
+    dataAosDelay: "0",
+    phone: "(406) 555-0120",
+    desp: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan. Lorem Ipsum is.",
+  },
+  {
+    className: "footer-menu-one",
+    dataAosDelay: "50",
+    links: [
+      { title: "About", link: "/about" },
+      { title: "Service", link: "/service" },
+      { title: "Contact Us", link: "/contact" },
+    ],
+  },
+  
+  {
+    className: "footer-address",
+    dataAosDelay: "150",
+    address: "901 N Pitt Str., Suite 170 Alexandria, NY, USA",
+    email: "shineanddrive23@gmail.com",
+  },
+];
+
+const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateEmail(email)) {
+      setMessage("Thank you for subscribing!");
+      setEmail("");
+    } else {
+      setMessage("Please enter a valid email address.");
+    }
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  return (
+    <>
+      <div className="ak-height-125 ak-height-lg-80"></div>
+      <footer className="footer style-1 footer-bg">
+        <div className="container">
+          <div className="ak-height-40 ak-height-lg-60"></div>
+          
+          <div className="ak-height-70 ak-height-lg-30"></div>
+          <div className="primary-color-border"></div>
+          <div className="ak-height-35 ak-height-lg-30"></div>
+          <div className="footer-logo">
+            <img src={footerLogo} alt="footer-logo" style={{width:'200px'}} />
+            <div className="ak-height-15 ak-height-lg-10"></div>
+          </div>
+          <div className="footer-content">
+            {footerDataArray.map((item, index) => (
+              <div
+                key={index}
+                className={item.className}
+                data-aos="fade-up"
+                data-aos-delay={item.dataAosDelay}
+                data-aos-duration="500"
+              >
+                {item.phone && (
+                  <>
+                    <p className="desp">{item.desp}</p>
+                    <div className="ak-height-35 ak-height-lg-30"></div>
+                   
+                  </>
+                )}
+                {item.links && (
+                  <div className="footer-menu">
+                    <p className="menu-title">QUICK LINK</p>
+                    {item.links.map((item, idx) => (
+                      <TextAnimation
+                        key={idx}
+                        link={item.link}
+                        title={item.title}
+                        classNamePass="menu-item white"
+                      />
+                    ))}
+                  </div>
+                )}
+                {item.address && (
+                  <div className="footer-address">
+                    <p className="adress-title">CONTACT</p>
+                    
+                    <Link to={`mailto:${item.email}`} className="email">
+                      <span className="me-1">
+                        <img src="/assets/img/icon/email.svg" alt="Email" width={17}/>
+                      </span>
+                      <span style={{fontSize:'15px'}}>{item.email}</span>
+                    </Link>
+                    
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="ak-height-70 ak-height-lg-30"></div>
+          <div className="primary-color-border"></div>
+          <div className="copy-right">
+            <p className="title  text-hover-animaiton">
+              Copyright 2024, All Right reserved
+            </p>
+            <div className="social-icon">
+              <a href=" https://www.tiktok.com/search?q=shine_and_drive23&t=1750306119943
+" target="_main">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a href="https://www.instagram.com/shine_and_drive23/" target="_main">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;
