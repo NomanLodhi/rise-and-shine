@@ -101,19 +101,7 @@ const Footer = () => {
                       </span>
                       <span style={{fontSize:'15px'}}>{item.email}</span>
                     </Link>
-                    
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="ak-height-70 ak-height-lg-30"></div>
-          <div className="primary-color-border"></div>
-          <div className="copy-right">
-            <p className="title  text-hover-animaiton">
-              Copyright 2024, All Right reserved
-            </p>
-            <div className="social-icon">
+                     <div className="social-icon">
               <a href=" https://www.tiktok.com/search?q=shine_and_drive23&t=1750306119943
 " target="_main">
                 <i class="fa-brands fa-tiktok"></i>
@@ -123,6 +111,18 @@ const Footer = () => {
               </a>
               
             </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="ak-height-70 ak-height-lg-30"></div>
+          <div className="primary-color-border"></div>
+          <div className="copy-right">
+            <p className="title  text-hover-animaiton">
+              Copyright 2025, All Right reserved
+            </p>
+           
           </div>
         </div>
       </footer>

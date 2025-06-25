@@ -15,27 +15,39 @@ const ServicesSection = ({ styleTypeTwo }) => {
         <div className="sticky-content container">
           <div className="content style_2">
             <div className="service">
+              <div className="row">
               {data.map((item) => (
-                <div
-                  className="service-card"
-                  data-aos="fade-left"
+                <div className="col-lg-4 py-2">
+                  <div
+                  className="card card-service bg-black text-light rounded-0"
+                  // data-aos="fade-left"
                   key={item.id}
+                  
                 >
                   
-                    <img src={`${item.img}`} className="ak-bg card-img" alt="..." />
-                  <div className="card-info ">
-                    <h1 className="card-title">
+                    <img src={`${item.img}`} className="ak-bg card-img rounded-0" alt="..." />
+                  <div className="card-info p-3"
+                  // style={{
+                  //   height:'550px',
+                  //   overflowY:'scroll',
+                  // }}
+                   >
+                    <h1 className="card-title fs-2 py-3">
                       {item.title}
                     </h1>
-                    <p className="card-desp">{item.desp}</p>
-                    <h5 >
-                      BENEFITS
+                    <p className="card-desp" style={{fontSize:'15px'}}>{item.desp}</p>
+                    <h5 className="fs-6 py-3">
+                      BENEFITS:
                       </h5>
-                    <p className="card-desp">{item.benefits}</p>
+                    <p className="card-desp" style={{fontSize:'15px'}}>{item.benefits}</p>
                    
                   </div>
                 </div>
+                </div>
               ))}
+              
+
+              </div>
             </div>
           </div>
           <div className="sidebar width-none">

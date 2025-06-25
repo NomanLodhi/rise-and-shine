@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Parallax, Pagination } from "swiper/modules";
+import { Parallax, Pagination, Autoplay } from "swiper/modules"; // ✅ Added Autoplay
 import { ButtonCommon } from "../Button/Button";
 import { Link } from "react-router-dom";
 
@@ -28,6 +28,10 @@ const HeroSlider = () => {
         loop={true}
         slidesPerView={"auto"}
         parallax={true}
+        autoplay={{         // ✅ Added autoplay
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
           el: ".hero-swiper-pagination",
@@ -35,7 +39,7 @@ const HeroSlider = () => {
             return '<p className="' + className + '">' + (index + 1) + "</p>";
           },
         }}
-        modules={[Parallax, Pagination]}
+        modules={[Parallax, Pagination, Autoplay]} // ✅ Added Autoplay here too
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -64,12 +68,15 @@ const HeroSlider = () => {
                       >
                         {item.maintitle}
                       </h1>
-                      <p className="mini-title" style={{fontSize:'15px'}} data-swiper-parallax="400">
+                      <p
+                        className="mini-title"
+                        style={{ fontSize: "15px" }}
+                        data-swiper-parallax="400"
+                      >
                         {item.desp}
                       </p>
                     </div>
                     <div className="ak-height-45 ak-height-lg-30"></div>
-                   
                   </div>
                 </div>
               </div>
@@ -161,11 +168,19 @@ const HeroSlider = () => {
         <div className="hero-swiper-pagination"></div>
       </div>
       <div className="social-hero">
-        <a href="https://www.tiktok.com/search?q=shine_and_drive23&t=1750306119943" className="social-icon1" target="_main">
-          <i class="fa-brands fa-tiktok"></i>
+        <a
+          href="https://www.tiktok.com/search?q=shine_and_drive23&t=1750306119943"
+          className="social-icon1"
+          target="_main"
+        >
+          <i className="fa-brands fa-tiktok"></i>
         </a>
-        <a href=" https://www.instagram.com/shine_and_drive23/" className="social-icon1" target="_main">
-          <i class="fa-brands fa-instagram"></i>
+        <a
+          href=" https://www.instagram.com/shine_and_drive23/"
+          className="social-icon1"
+          target="_main"
+        >
+          <i className="fa-brands fa-instagram"></i>
         </a>
         <div className="social-horizontal"></div>
         <h6 className="social-link">FOLLOW US</h6>

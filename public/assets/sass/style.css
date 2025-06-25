@@ -2972,8 +2972,10 @@ kbd {
      object-fit: cover;
   max-height: 325px;
 }
-.service-card .card-info {
+.card-service .card-info {
   max-width: 420px;
+  height:550px !important;
+  overflow: hidden;
 }
 .service-card .card-info .card-title {
   font-size: 28px;

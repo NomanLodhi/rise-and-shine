@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Main from "./layout/Main";
+import './custom.css'
 import AOS from "aos";
 import ErrorPages from "./pages/ErrorPages";
 import Home from "./pages/Home";

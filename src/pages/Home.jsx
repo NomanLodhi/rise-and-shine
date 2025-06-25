@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
+      {/* <ChooseUs /> */}
       <ServiceProgres />
-      <ChooseUs />
       <Services styleTypeTwo={true} />
       {/* <AutoCounter />
       <TrustedClient />

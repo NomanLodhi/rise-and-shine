@@ -1,0 +1,15 @@
+.card-service .card-info {
+  height: 450px;
+  overflow-y: scroll;
+}
+
+/* For WebKit-based browsers (Chrome, Edge, Safari) */
+.card-service .card-info::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+.card-service .card-info::-webkit-scrollbar-thumb {
+  background-color: #DA291C; /* Reddish thumb */
+  border-radius: 10px;
+}
