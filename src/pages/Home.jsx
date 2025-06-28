@@ -23,7 +23,7 @@ export default function Home() {
       <TrustedClient />
       <Testimonial /> */}
       {/* <Teams /> */}
-      {/* <PricingTable /> */}
+      <PricingTable />
       {/* <Blogs styleTypeTwo={true} /> */}
     </>
   );

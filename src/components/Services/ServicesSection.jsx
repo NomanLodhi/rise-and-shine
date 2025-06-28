@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MoreBtn } from "../Button/Button";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import { Link } from "react-router-dom";
@@ -7,6 +7,11 @@ import servicesData from "../../dataJson/servicesData.json";
 
 const ServicesSection = ({ styleTypeTwo }) => {
   const data = styleTypeTwo ? servicesData.slice(0, 3) : servicesData;
+const [expandedCardId, setExpandedCardId] = useState(null);
+
+  const expandCard = (id) => {
+  setExpandedCardId(id);
+};
 
   return (
     <>
@@ -16,35 +21,33 @@ const ServicesSection = ({ styleTypeTwo }) => {
           <div className="content style_2">
             <div className="service">
               <div className="row">
-              {data.map((item) => (
-                <div className="col-lg-4 py-2">
-                  <div
-                  className="card card-service bg-black text-light rounded-0"
-                  // data-aos="fade-left"
-                  key={item.id}
-                  
-                >
-                  
-                    <img src={`${item.img}`} className="ak-bg card-img rounded-0" alt="..." />
-                  <div className="card-info p-3"
-                  // style={{
-                  //   height:'550px',
-                  //   overflowY:'scroll',
-                  // }}
-                   >
-                    <h1 className="card-title fs-2 py-3">
-                      {item.title}
-                    </h1>
-                    <p className="card-desp" style={{fontSize:'15px'}}>{item.desp}</p>
-                    <h5 className="fs-6 py-3">
-                      BENEFITS:
-                      </h5>
-                    <p className="card-desp" style={{fontSize:'15px'}}>{item.benefits}</p>
-                   
-                  </div>
-                </div>
-                </div>
-              ))}
+             {data.map((item) => (
+  <div className="col-lg-4 py-2" key={item.id}>
+    <div className="card card-service bg-black text-light rounded-0">
+      <img src={`${item.img}`} className="ak-bg card-img rounded-0" alt="..." />
+      
+      <div
+        className="card-info p-3 position-relative"
+        style={{ height: expandedCardId === item.id ? 'auto' : '300px', overflow: 'hidden' }} // adjust 300px as default height
+      >
+        <h1 className="card-title fs-2 py-3">{item.title}</h1>
+        <p className="card-desp" style={{ fontSize: '15px' }}>{item.desp}</p>
+        <h5 className="fs-6 py-3">BENEFITS:</h5>
+        <p className="card-desp" style={{ fontSize: '15px' }}>{item.benefits}</p>
+        
+        {expandedCardId !== item.id && (
+          <button
+            onClick={() => expandCard(item.id)}
+            className="btn btn-dark text-danger position-absolute w-100 start-0 rounded-0 bottom-0"
+          >
+            Read More
+          </button>
+        )}
+      </div>
+    </div>
+  </div>
+))}
+
               
 
               </div>

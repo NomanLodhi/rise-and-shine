@@ -1,15 +1,20 @@
 .card-service .card-info {
-  height: 450px;
-  overflow-y: scroll;
+  height: 350px;
+  overflow-y: hidden;
+  transition: all 1s linear;
 }
 
-/* For WebKit-based browsers (Chrome, Edge, Safari) */
-.card-service .card-info::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 10px;
+.nav-style .nav-item .nav-link{
+  background-color: white;
+  padding: 10px 50px;
+  border-radius: 20px !important;
+  color: black !important;
+  margin: 10px;
+}
+.nav-style .nav-item .active{
+background: rgba(255, 61, 36, 0.6) !important;
+color: white !important;
+border: none !important;
 }
 
-.card-service .card-info::-webkit-scrollbar-thumb {
-  background-color: #DA291C; /* Reddish thumb */
-  border-radius: 10px;
-}
+
