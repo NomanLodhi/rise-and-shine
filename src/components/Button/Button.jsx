@@ -19,7 +19,7 @@ export function MoreBtn(props) {
 
 export function CtaBtn(props) {
   return (
-    <Link to={props.to} className="cta-btn">
+    <Link to={props.to} className="cta-btn ">
       <img src="/assets/img/icon/phone.svg" alt="..." />
       <span className="ms-2"> {props.children}</span>
     </Link>

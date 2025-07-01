@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 const serviceProgresData = [
   {
@@ -37,6 +38,14 @@ Because confidence begins with a flawless ride.`,
 const ServiceProgres = () => {
   return (
     <section className="container">
+      
+               
+     <div className="mt-5">
+            <SectionHeading
+                title={"Why Choose Us?"}
+                />
+     </div>
+              
       <div className="ak-height-125 ak-height-lg-80"></div>
       <div className="row  row-cols-1 row-cols-xl-3 g-4">
         {serviceProgresData?.map((item) => (

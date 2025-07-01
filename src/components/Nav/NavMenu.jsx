@@ -30,7 +30,7 @@ export default function NavMenu() {
         <div className="ak-main_header_in">
           <div className="ak-main-header-left">
             <Link className="ak-site_branding" to="/">
-              <img src={logo} alt="..." width={150} style={{objectFit:'cover'}}/>
+              <img src={logo} alt="..." width={200} style={{objectFit:'cover'}}/>
             </Link>
           </div>
           <div className="ak-main-header-center">

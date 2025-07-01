@@ -1,173 +1,40 @@
 import React from "react";
 import PricingCard from "./PricingCard";
 import SectionHeading from "../SectionHeading/SectionHeading";
+import Regularpackages from "./Regularpackages";
 
 const pricingData = [
-  {
-    title: "Basic",
-    discountPrice: "$150",
-    options: [
-      "Exterior Ultra Foam Wash",
-      "Wheel & Tire Cleaning",
-      "Bug Splatter Removal",
-      "Tire Shine Coating",
-      "Glass Cleaning (Windows, Mirrors)",
-      "Interior Vacuuming",
-      "Dashboard & Trim Cleaning",
-      "Pet Hair Removal",
-      "Seat Belt Cleaning",
-      "Basic Paint Correction (Single stage)",
-    ],
-    category:'Cars',
-    isActive: false,
-    aosDelay: 0,
-  },
-  {
-    title: "Essential",
-    discountPrice: "$190",
-    options: [
-      "Everything in Basic Package, plus",
-      "Clay Bar Treatment",
-      "Interior Shampoo",
-      "Interior Trim Polish",
-      "Door Panel & Cupholder Cleaning",
-      "Paint Protection Spray (6-month durability)"
-    ],
-    category:'Cars',
-    isActive: false,
-    aosDelay: 50,
-  },
-  {
-    title: "Premium",
-    discountPrice: "$230",
-    options: [
-      "Everything in Essential Package, plus",
-      "Steam Cleaning (Seats, Carpets, Mats)",
-      "Headliner Spot Cleaning",
-      "Engine Bay Wipe-Down",
-      "Rain Repellent on Glass",
-      "Undercarriage Rinse",
-      "Interior Deodorizer Treatment",
-      "Wheel Detailing",
-      "Trim Restoration",
-      "Advanced Paint Correction (Multi-stage)"
-    ],
-    category:'Cars',
-    isActive: true,
-    aosDelay: 100,
-  },
-  {
-    title: "Basic",
-    discountPrice: "$170",
-    options: [
-      "Exterior Ultra Foam Wash",
-      "Wheel & Tire Cleaning",
-      "Bug Splatter Removal",
-      "Tire Shine Coating",
-      "Glass Cleaning (Windows, Mirrors)",
-      "Interior Vacuuming",
-      "Dashboard & Trim Cleaning",
-      "Pet Hair Removal",
-      "Seat Belt Cleaning",
-      "Basic Paint Correction (Single stage)",
-    ],
-    category:'SUVs',
-    isActive: false,
-    aosDelay: 0,
-  },
-  {
-    title: "Essential",
-    discountPrice: "$210",
-    options: [
-      "Everything in Basic Package, plus",
-      "Clay Bar Treatment",
-      "Interior Shampoo",
-      "Interior Trim Polish",
-      "Door Panel & Cupholder Cleaning",
-      "Paint Protection Spray (6-month durability)"
-    ],
-    category:'SUVs',
-    isActive: false,
-    aosDelay: 50,
-  },
-  {
-    title: "Premium",
-    discountPrice: "$260",
-    options: [
-      "Everything in Essential Package, plus",
-      "Steam Cleaning (Seats, Carpets, Mats)",
-      "Headliner Spot Cleaning",
-      "Engine Bay Wipe-Down",
-      "Rain Repellent on Glass",
-      "Undercarriage Rinse",
-      "Interior Deodorizer Treatment",
-      "Wheel Detailing",
-      "Trim Restoration",
-      "Advanced Paint Correction (Multi-stage)"
-    ],
-    category:'SUVs',
-    isActive: true,
-    aosDelay: 100,
-  },
-  {
-    title: "Basic",
-    discountPrice: "$200",
-    options: [
-      "Exterior Ultra Foam Wash",
-      "Wheel & Tire Cleaning",
-      "Bug Splatter Removal",
-      "Tire Shine Coating",
-      "Glass Cleaning (Windows, Mirrors)",
-      "Interior Vacuuming",
-      "Dashboard & Trim Cleaning",
-      "Pet Hair Removal",
-      "Seat Belt Cleaning",
-      "Basic Paint Correction (Single stage)",
-    ],
-    category:'Trucks',
-    isActive: false,
-    aosDelay: 0,
-  },
-  {
-    title: "Essential",
-    discountPrice: "$240",
-    options: [
-      "Everything in Basic Package, plus",
-      "Clay Bar Treatment",
-      "Interior Shampoo",
-      "Interior Trim Polish",
-      "Door Panel & Cupholder Cleaning",
-      "Paint Protection Spray (6-month durability)"
-    ],
-    category:'Trucks',
-    isActive: false,
-    aosDelay: 50,
-  },
-  {
-    title: "Premium",
-    discountPrice: "$280",
-    options: [
-      "Everything in Essential Package, plus",
-      "Steam Cleaning (Seats, Carpets, Mats)",
-      "Headliner Spot Cleaning",
-      "Engine Bay Wipe-Down",
-      "Rain Repellent on Glass",
-      "Undercarriage Rinse",
-      "Interior Deodorizer Treatment",
-      "Wheel Detailing",
-      "Trim Restoration",
-      "Advanced Paint Correction (Multi-stage)"
-    ],
-    category:'Trucks',
-    isActive: true,
-    aosDelay: 100,
-  },
-
+  'Exterior Ultra Foam Wash',
+  'Wheel & Tire Cleaning',
+  'Bug Splatter Removal',
+  'Tire Shine Coating',
+  'Glass Cleaning (Windows, Mirrors)',
+  'Interior Vacuuming',
+  'Dashboard & Trim Cleaning',
+  'Pet Hair Removal',
+  'Seat Belt Cleaning',
+  'Basic Paint Correction (Single stage)',
+  'Clay Bar Treatment',
+  'Interior Shampoo',
+  'Interior Trim Polish',
+  'Door Panel & Cupholder Cleaning',
+  'Paint Protection Spray (6-month durability)',
+  'Steam Cleaning (Seats, Carpets, Mats)',
+  'Headliner Spot Cleaning',
+  'Engine Bay Wipe-Down',
+  'Rain Repellent on Glass',
+  'Undercarriage Rinse',
+  'Interior Deodorizer Treatment',
+  'Wheel Detailing',
+  'Trim Restoration',
+  'Advanced Paint Correction (Multi-stage)',
 ];
-const cars=pricingData.filter(data=>data.category=='Cars')
-const SUVs=pricingData.filter(data=>data.category=='SUVs')
-const Trucks=pricingData.filter(data=>data.category=='Trucks')
-console.log(cars)
+;
+const vehicleNames=['Cars','SUVs','Trucks']
+const basicPrices=['$150','$170','$200']
+const essentialPrices=['$190','$210','$240']
+const premiumPrices=['$230','$260','$280']
+
 const PricingTable = ({ type }) => {
   return (
     <>
@@ -190,7 +57,7 @@ const PricingTable = ({ type }) => {
               <div className="ak-height-50 ak-height-lg-50"></div>
             </>
           )}
-<ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
+{/* <ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
   <li class="nav-item " role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Cars</button>
   </li>
@@ -258,8 +125,239 @@ const PricingTable = ({ type }) => {
           </div>
   </div>
   <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
-</div>
+</div> */}
+ <div className="container py-5  ">
+<SectionHeading
+                title={"Popular Packages (For Full Detailing)"}
+                />
+ </div>
+        <div className="price-table-container">
+           <div className="row t-package ">
+         <div className="col-3 p-0">
+          <p className="p-2" style={{borderBottom:"1px solid red"}}>Packages</p>
+          <p className="p-2" style={{borderBottom:"1px solid red"}}>Vehicles</p>
+          <p className="p-2" >Prices</p>
+         </div>
+         <div className="col-3">
+          <p className="text-center p-2">Basic</p>
+          <div className="row">
+           {
+            vehicleNames.map(name=>(
+               <div className="col-4 text-center p-2">{name}</div>
+              ))
+            }
+          </div>
+          <div className="row">
+           {
+            basicPrices.map(price=>(
+               <div className="col-4 text-center p-2">{price}</div>
+              ))
+            }
+          </div>
+            
+         </div>
+         <div className="col-3">
+          <p className="text-center p-2">Essentials</p>
+         <div className="row">
+           {
+            vehicleNames.map(name=>(
+               <div className="col-4 text-center p-2">{name}</div>
+              ))
+            }
+          </div>
+           <div className="row">
+           {
+            essentialPrices.map(price=>(
+               <div className="col-4 text-center p-2">{price}</div>
+              ))
+            }
+          </div>
+         </div>
+         <div className="col-3">
+          <p className="text-center p-2">Premium</p>
+          <div className="row">
+           {
+            vehicleNames.map(name=>(
+               <div className="col-4 text-center p-2">{name}</div>
+              ))
+            }
+          </div>
+           <div className="row">
+           {
+            premiumPrices.map(price=>(
+               <div className="col-4 text-center p-2">{price}</div>
+              ))
+            }
+          </div>
+         </div>
+         </div>
+         <h5 className="my-3">Includes:</h5>
+         <div className="row t-package">
+          <div className="col-3 p-0">
+       {
+        pricingData.map(name=>(
+          <p className="p-2" style={{borderBottom:'1px solid red'}}>{name}</p>
+        ))
+       }
+          </div>
+          <div className="col-3 p-0">
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+          </div>
+          <div className="col-3 p-0">
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+          </div>
+          <div className="col-3 p-0">
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
+              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
+            </p>
+          </div>
           
+          
+         </div>
+        </div>
+        <Regularpackages/>
         </div>
         <div className="ak-height-100 ak-height-lg-80"></div>
       </div>

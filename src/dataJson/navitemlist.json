@@ -14,5 +14,10 @@
         "title": "Contact",
         "link": "/contact",
         "key": "contact"
+    },
+    {
+        "title": "Packages",
+        "link": "/pricing",
+        "key": "package"
     }
 ]

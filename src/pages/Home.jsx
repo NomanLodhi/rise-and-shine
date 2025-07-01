@@ -12,6 +12,7 @@ import Blogs from "../components/Blog/Blogs";
 import Teams from "../components/Team/Teams";
 import AutoCounter from "../components/AutoCounter/AutoCounter";
 
+
 export default function Home() {
   return (
     <>
@@ -23,7 +24,7 @@ export default function Home() {
       <TrustedClient />
       <Testimonial /> */}
       {/* <Teams /> */}
-      <PricingTable />
+      {/* <PricingTable /> */}
       {/* <Blogs styleTypeTwo={true} /> */}
     </>
   );

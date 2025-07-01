@@ -9,7 +9,7 @@ const footerDataArray = [
     className: "footer-info",
     dataAosDelay: "0",
     phone: "(406) 555-0120",
-    desp: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan. Lorem Ipsum is.",
+    desp: "Shine and Drive brings your vehicle back to life with expert care and attention. From wash to wax, we set the standard. Shine with pride.",
   },
   {
     className: "footer-menu-one",
@@ -118,7 +118,7 @@ const Footer = () => {
           </div>
           <div className="ak-height-70 ak-height-lg-30"></div>
           <div className="primary-color-border"></div>
-          <div className="copy-right">
+          <div className="copy-right text-center">
             <p className="title  text-hover-animaiton">
               Copyright 2025, All Right reserved
             </p>

@@ -1,9 +1,14 @@
 .card-service .card-info {
-  height: 350px;
+  height: 450px;
   overflow-y: hidden;
   transition: all 1s linear;
 }
-
+.price-table-container{
+  overflow-x: scroll !important;
+}
+.price-table-container::-webkit-scrollbar{
+  display: none;
+}
 .nav-style .nav-item .nav-link{
   background-color: white;
   padding: 10px 50px;
@@ -11,10 +16,46 @@
   color: black !important;
   margin: 10px;
 }
+.footer.style-1 .copy-right {
+    padding: 24px 0px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .nav-style .nav-item .active{
 background: rgba(255, 61, 36, 0.6) !important;
 color: white !important;
 border: none !important;
 }
-
+.t-package div{
+border: 1px solid red;
+}
+.btn-service {
+  background-color: rgba(41, 40, 40, 0.5);
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  padding: 10px;
+  transition:0.5s all linear;
+  backdrop-filter: blur(30px);
+  border: none;
+}
+.btn-service:hover{
+  background-color: rgba(185, 184, 184, 0.5);
+  color: black;
+  backdrop-filter: blur(30px);
+}
+  
+/* Responsiveness */
+@media (max-width:570px) {
+  .t-package{
+    width: 1180px;
+  }
+}
 

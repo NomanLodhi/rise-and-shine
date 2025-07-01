@@ -21,13 +21,18 @@ const [expandedCardId, setExpandedCardId] = useState(null);
           <div className="content style_2">
             <div className="service">
               <div className="row">
+               
              {data.map((item) => (
-  <div className="col-lg-4 py-2" key={item.id}>
-    <div className="card card-service bg-black text-light rounded-0">
-      <img src={`${item.img}`} className="ak-bg card-img rounded-0" alt="..." />
+  <div className="col-lg-6 py-2" key={item.id}>
+    <div className="card card-service bg-black text-light rounded-0 postion-relative">
+     <div className="row g-0 ">
+      <div className="col-md-4">
+         <img src={`${item.img}`} className="ak-bg card-img rounded-0" alt="..." />
       
-      <div
-        className="card-info p-3 position-relative"
+      </div>
+      <div className="col-md-8">
+        <div
+        className="card-info p-3"
         style={{ height: expandedCardId === item.id ? 'auto' : '300px', overflow: 'hidden' }} // adjust 300px as default height
       >
         <h1 className="card-title fs-2 py-3">{item.title}</h1>
@@ -38,11 +43,13 @@ const [expandedCardId, setExpandedCardId] = useState(null);
         {expandedCardId !== item.id && (
           <button
             onClick={() => expandCard(item.id)}
-            className="btn btn-dark text-danger position-absolute w-100 start-0 rounded-0 bottom-0"
+            className="btn-service"
           >
             Read More
           </button>
-        )}
+                )}
+     </div>
+      </div>
       </div>
     </div>
   </div>
@@ -53,21 +60,20 @@ const [expandedCardId, setExpandedCardId] = useState(null);
               </div>
             </div>
           </div>
-          <div className="sidebar width-none">
-            <div className="services-content">
+        
+            <div className="container mx-auto ">
               <SectionHeading
                 bgText={"Services"}
                 title={"Dedicated is Services"}
-                desp={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr sstan. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum."
-                }
+               
               />
               <div className="ak-height-50 ak-height-lg-10"></div>
-              <MoreBtn to="/service">VIEW All SERVICES</MoreBtn>
+              <div className="d-flex justify-content-center">
+                <MoreBtn to="/service" >VIEW All SERVICES</MoreBtn>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
