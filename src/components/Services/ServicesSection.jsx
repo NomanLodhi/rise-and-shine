@@ -20,7 +20,7 @@ const [expandedCardId, setExpandedCardId] = useState(null);
         <div className="sticky-content container">
           <div className="content style_2">
             <div className="service">
-              <div className="row">
+              <div className="row justify-content-center">
                
              {data.map((item) => (
   <div className="col-lg-6 py-2" key={item.id}>

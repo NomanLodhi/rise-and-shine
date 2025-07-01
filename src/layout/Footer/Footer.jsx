@@ -26,6 +26,7 @@ const footerDataArray = [
     dataAosDelay: "150",
     address: "901 N Pitt Str., Suite 170 Alexandria, NY, USA",
     email: "shineanddrive23@gmail.com",
+    phone: "+1 (778) 710-1789",
   },
 ];
 
@@ -74,10 +75,9 @@ const Footer = () => {
                 {item.phone && (
                   <>
                     <p className="desp">{item.desp}</p>
-                    <div className="ak-height-35 ak-height-lg-30"></div>
-                   
                   </>
                 )}
+                   
                 {item.links && (
                   <div className="footer-menu">
                     <p className="menu-title">QUICK LINK</p>
@@ -101,6 +101,12 @@ const Footer = () => {
                       </span>
                       <span style={{fontSize:'15px'}}>{item.email}</span>
                     </Link>
+                    <a href={`tel:${item.phone}`}  className="email">
+                      <span className="me-1">
+                        <i class="fa-solid fa-phone"></i >
+                      </span>
+                      <span style={{fontSize:'15px'}}>{item.phone}</span>
+                    </a>
                      <div className="social-icon">
               <a href=" https://www.tiktok.com/search?q=shine_and_drive23&t=1750306119943
 " target="_main">

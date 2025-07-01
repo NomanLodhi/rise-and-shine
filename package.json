@@ -21,7 +21,8 @@
     "react-modal-video": "^2.0.1",
     "react-router-dom": "^6.23.1",
     "split-type": "^0.3.4",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "yet-another-react-lightbox": "^3.23.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

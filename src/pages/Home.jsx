@@ -11,6 +11,7 @@ import PricingTable from "../components/Pricing/PricingTable";
 import Blogs from "../components/Blog/Blogs";
 import Teams from "../components/Team/Teams";
 import AutoCounter from "../components/AutoCounter/AutoCounter";
+import MainGallery from "../components/MainGallery/MainGallery";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <HeroSlider />
       {/* <ChooseUs /> */}
       <ServiceProgres />
+      <MainGallery/>
       <Services styleTypeTwo={true} />
       {/* <AutoCounter />
       <TrustedClient />

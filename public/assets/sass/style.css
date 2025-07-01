@@ -2748,7 +2748,7 @@ kbd {
 .footer.style-1 .copy-right {
   padding: 24px 0px;
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   align-items: center;
   flex-wrap: wrap;
 }

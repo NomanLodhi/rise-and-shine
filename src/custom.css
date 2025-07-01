@@ -3,9 +3,7 @@
   overflow-y: hidden;
   transition: all 1s linear;
 }
-.price-table-container{
-  overflow-x: scroll !important;
-}
+
 .price-table-container::-webkit-scrollbar{
   display: none;
 }
@@ -18,9 +16,8 @@
 }
 .footer.style-1 .copy-right {
     padding: 24px 0px;
-    display: flex
-;
-    justify-content: center;
+    display: flex;
+    justify-content: center !important;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -57,5 +54,9 @@ border: 1px solid red;
   .t-package{
     width: 1180px;
   }
+  .price-table-container{
+  overflow-x: scroll !important;
+  padding: 50px;
+}
 }
 
