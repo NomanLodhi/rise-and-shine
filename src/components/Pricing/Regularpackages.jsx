@@ -1,26 +1,8 @@
 import React from 'react'
 import SectionHeading from '../SectionHeading/SectionHeading';
-
+import packages from '../../dataJson/regularpackages.json'
 export default function Regularpackages() {
-  const pricingData = [
-  'Exterior Ultra Foam Wash',
-  'Interior Vacuuming',
-  'Dashboard Wipe Down',
-  'Console Wipe Down',
-  'Interior Shampoo',
-  'Interior Trim Polish',
-  'Steam Cleaning (Seats/Carpets)',
-  'Engine Bay Wipe-Down (extra charges for pet hair)',
-  'Interior Deodorizer',
-  'Headliner Spot Cleaning',
-  'Basic Paint Correction',
-];
 
-;
-const vehicleNames=['Cars','SUVs','Trucks']
-const basicPrices=['$150','$170','$200']
-const essentialPrices=['$190','$210','$240']
-const premiumPrices=['$230','$260','$280']
   return (
     <div>
         <div className="container">
@@ -31,147 +13,152 @@ const premiumPrices=['$230','$260','$280']
                 />
                 </div>
               <div className="price-table-container">
-                    <div className="row t-package">
-         <div className="col-3 p-0">
-          <p className="p-2" style={{borderBottom:"1px solid red"}}>Packages</p>
-          <p className="p-2" style={{borderBottom:"1px solid red"}}>Vehicles</p>
-          <p className="p-2" >Prices</p>
-         </div>
-         <div className="col-3">
-          <p className="text-center p-2">Basic</p>
-          <div className="row">
-           {
-            vehicleNames.map(name=>(
-               <div className="col-4 text-center p-2">{name}</div>
-              ))
-            }
-          </div>
-          <div className="row">
-           {
-            basicPrices.map(price=>(
-               <div className="col-4 text-center p-2">{price}</div>
-              ))
-            }
-          </div>
-            
-         </div>
-         <div className="col-3">
-          <p className="text-center p-2">Essentials</p>
-         <div className="row">
-           {
-            vehicleNames.map(name=>(
-               <div className="col-4 text-center p-2">{name}</div>
-              ))
-            }
-          </div>
-           <div className="row">
-           {
-            essentialPrices.map(price=>(
-               <div className="col-4 text-center p-2">{price}</div>
-              ))
-            }
-          </div>
-         </div>
-         <div className="col-3">
-          <p className="text-center p-2">Premium</p>
-          <div className="row">
-           {
-            vehicleNames.map(name=>(
-               <div className="col-4 text-center p-2">{name}</div>
-              ))
-            }
-          </div>
-           <div className="row">
-           {
-            premiumPrices.map(price=>(
-               <div className="col-4 text-center p-2">{price}</div>
-              ))
-            }
-          </div>
-         </div>
-         </div>
-         <h5 className="my-3">Includes:</h5>
-         <div className="row t-package">
-          <div className="col-3 p-0">
-       {
-        pricingData.map(name=>(
-          <p className="p-2" style={{borderBottom:'1px solid red'}}>{name}</p>
-        ))
-       }
-          </div>
-      <div className="col-3 p-0">
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-      </div>
-      <div className="col-3 p-0">
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-      </div>
-      <div className="col-3 p-0">
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-        <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-        </p>
-      </div>
-          
-          
-          
-         </div>
+              <ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
+                <li class="nav-item " role="presentation">
+                  <button class="nav-link active" id="homet-tab" data-bs-toggle="tab" data-bs-target="#homet-tab-pane" type="button" role="tab" aria-controls="homet-tab-pane" aria-selected="true">Cars</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profilet-tab" data-bs-toggle="tab" data-bs-target="#profilet-tab-pane" type="button" role="tab" aria-controls="profilet-tab-pane" aria-selected="false">SUVs</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="contactT-tab" data-bs-toggle="tab" data-bs-target="#contactT-tab-pane" type="button" role="tab" aria-controls="contactT-tab-pane" aria-selected="false">Trucks</button>
+                </li>
+                
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active py-5" id="homet-tab-pane" role="tabpanel" aria-labelledby="homet-tab" tabindex="0">
+                   <table className="table table-striped table-hover ">
+                <thead>
+                  <tr className="row-head">
+                    <th scope="col"> </th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+                  </tr>
+                    
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="col"></td>
+                    <td scope="col" className="text-center">$150</td>
+                    <td scope="col" className="text-center">$190</td>
+                    <td scope="col" className="text-center">$230</td>
+                  </tr>
+                  {
+                    packages.map((data)=>(
+                      <>
+                      <tr>
+                    <th scope="row" >{data.name}</th>
+                    <td className="text-center border">{
+                      data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                    <td className="text-center border">{
+                      data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                    <td className="text-center border">{
+                      data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                   
+                  </tr>
+                      </>
+                    ))
+                  }
+                </tbody>
+              </table>
+                  
+                 
+              
+                  </div>
+                  <div class="tab-pane fade py-5" id="profilet-tab-pane" role="tabpanel" aria-labelledby="profilet-tab" tabindex="0">
+                  <table className="table table-striped table-hover ">
+                <thead>
+                  <tr className="row-head">
+                    <th scope="col"> </th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+                  </tr>
+                    
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="col"></td>
+                    <td scope="col" className="text-center">$170</td>
+                    <td scope="col" className="text-center">$210</td>
+                    <td scope="col" className="text-center">$260</td>
+                  </tr>
+                  {
+                    packages.map((data)=>(
+                      <>
+                      <tr>
+                    <th scope="row" >{data.name}</th>
+                    <td className="text-center border">{
+                      data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                    <td className="text-center border">{
+                      data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                    <td className="text-center border">{
+                      data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                   
+                  </tr>
+                      </>
+                    ))
+                  }
+                </tbody>
+              </table>
+                </div>
+                <div class="tab-pane fade py-5" id="contactT-tab-pane" role="tabpanel" aria-labelledby="contactT-tab" tabindex="0">
+                  <table className="table table-striped table-hover ">
+                <thead>
+                  <tr className="row-head">
+                    <th scope="col"> </th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+                  </tr>
+                    
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="col"></td>
+                    <td scope="col" className="text-center">$200</td>
+                    <td scope="col" className="text-center">$240</td>
+                    <td scope="col" className="text-center">$280</td>
+                  </tr>
+                  {
+                    packages.map((data)=>(
+                      <>
+                      <tr>
+                    <th scope="row" >{data.name}</th>
+                    <td className="text-center border">{
+                      data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                    <td className="text-center border">{
+                      data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                    <td className="text-center border">{
+                      data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+                      }
+                    </td>
+                   
+                  </tr>
+                      </>
+                    ))
+                  }
+                </tbody>
+              </table>
+                </div>
+                </div>
               </div>
     
         </div>

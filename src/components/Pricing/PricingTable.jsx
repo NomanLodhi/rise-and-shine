@@ -2,38 +2,12 @@ import React from "react";
 import PricingCard from "./PricingCard";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import Regularpackages from "./Regularpackages";
+import packages from '../../dataJson/packages.json'
 
-const pricingData = [
-  'Exterior Ultra Foam Wash',
-  'Wheel & Tire Cleaning',
-  'Bug Splatter Removal',
-  'Tire Shine Coating',
-  'Glass Cleaning (Windows, Mirrors)',
-  'Interior Vacuuming',
-  'Dashboard & Trim Cleaning',
-  'Pet Hair Removal',
-  'Seat Belt Cleaning',
-  'Basic Paint Correction (Single stage)',
-  'Clay Bar Treatment',
-  'Interior Shampoo',
-  'Interior Trim Polish',
-  'Door Panel & Cupholder Cleaning',
-  'Paint Protection Spray (6-month durability)',
-  'Steam Cleaning (Seats, Carpets, Mats)',
-  'Headliner Spot Cleaning',
-  'Engine Bay Wipe-Down',
-  'Rain Repellent on Glass',
-  'Undercarriage Rinse',
-  'Interior Deodorizer Treatment',
-  'Wheel Detailing',
-  'Trim Restoration',
-  'Advanced Paint Correction (Multi-stage)',
-];
-;
-const vehicleNames=['Cars','SUVs','Trucks']
-const basicPrices=['$150','$170','$200']
-const essentialPrices=['$190','$210','$240']
-const premiumPrices=['$230','$260','$280']
+
+
+
+
 
 const PricingTable = ({ type }) => {
   return (
@@ -57,7 +31,15 @@ const PricingTable = ({ type }) => {
               <div className="ak-height-50 ak-height-lg-50"></div>
             </>
           )}
-{/* <ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
+
+ <div className="container py-5  ">
+<SectionHeading
+                title={"Popular Packages (For Full Detailing)"}
+                />
+ </div>
+        <div className="price-table-container">
+          
+<ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
   <li class="nav-item " role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Cars</button>
   </li>
@@ -71,296 +53,147 @@ const PricingTable = ({ type }) => {
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active py-5" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-    <div className="pricing">
-            {
-            
-            cars.map((data,index)=> (
-             
-            <PricingCard
-                key={index}
-                title={data.title}
-                discountPrice={data.discountPrice}
-                options={data.options}
-                isActive={data.isActive}
-                aosDelay={data.aosDelay}
-              />
-            ))
-            }
-          </div>
-  </div>
-  <div class="tab-pane fade py-5" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-    <div className="pricing">
-            {
-            
-            SUVs.map((data,index)=> (
-             
-            <PricingCard
-                key={index}
-                title={data.title}
-                discountPrice={data.discountPrice}
-                options={data.options}
-                isActive={data.isActive}
-                aosDelay={data.aosDelay}
-              />
-            ))
-            }
-          </div>
+     <table className="table table-striped table-hover ">
+  <thead>
+    <tr className="row-head">
+      <th scope="col"> </th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+    </tr>
+      
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="col"></td>
+      <td scope="col" className="text-center">$150</td>
+      <td scope="col" className="text-center">$190</td>
+      <td scope="col" className="text-center">$230</td>
+    </tr>
+    {
+      packages.map((data)=>(
+        <>
+        <tr>
+      <th scope="row" >{data.name}</th>
+      <td className="text-center border">{
+        data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+      <td className="text-center border">{
+        data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+      <td className="text-center border">{
+        data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+     
+    </tr>
+        </>
+      ))
+    }
+  </tbody>
+</table>
+    
+   
+
+    </div>
+    <div class="tab-pane fade py-5" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    <table className="table table-striped table-hover ">
+  <thead>
+    <tr className="row-head">
+      <th scope="col"> </th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+    </tr>
+      
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="col"></td>
+      <td scope="col" className="text-center">$170</td>
+      <td scope="col" className="text-center">$210</td>
+      <td scope="col" className="text-center">$260</td>
+    </tr>
+    {
+      packages.map((data)=>(
+        <>
+        <tr>
+      <th scope="row" >{data.name}</th>
+      <td className="text-center border">{
+        data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+      <td className="text-center border">{
+        data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+      <td className="text-center border">{
+        data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+     
+    </tr>
+        </>
+      ))
+    }
+  </tbody>
+</table>
   </div>
   <div class="tab-pane fade py-5" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-     <div className="pricing">
-            {
-            
-            Trucks.map((data,index)=> (
-             
-            <PricingCard
-                key={index}
-                title={data.title}
-                discountPrice={data.discountPrice}
-                options={data.options}
-                isActive={data.isActive}
-                aosDelay={data.aosDelay}
-              />
-            ))
-            }
-          </div>
+    <table className="table table-striped table-hover ">
+  <thead>
+    <tr className="row-head">
+      <th scope="col"> </th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+    </tr>
+      
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="col"></td>
+      <td scope="col" className="text-center">$200</td>
+      <td scope="col" className="text-center">$240</td>
+      <td scope="col" className="text-center">$280</td>
+    </tr>
+    {
+      packages.map((data)=>(
+        <>
+        <tr>
+      <th scope="row" >{data.name}</th>
+      <td className="text-center border">{
+        data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+      <td className="text-center border">{
+        data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+      <td className="text-center border">{
+        data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
+        }
+      </td>
+     
+    </tr>
+        </>
+      ))
+    }
+  </tbody>
+</table>
   </div>
-  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
-</div> */}
- <div className="container py-5  ">
-<SectionHeading
-                title={"Popular Packages (For Full Detailing)"}
-                />
- </div>
-        <div className="price-table-container">
-           <div className="row t-package ">
-         <div className="col-3 p-0">
-          <p className="p-2" style={{borderBottom:"1px solid red"}}>Packages</p>
-          <p className="p-2" style={{borderBottom:"1px solid red"}}>Vehicles</p>
-          <p className="p-2" >Prices</p>
-         </div>
-         <div className="col-3">
-          <p className="text-center p-2">Basic</p>
-          <div className="row">
-           {
-            vehicleNames.map(name=>(
-               <div className="col-4 text-center p-2">{name}</div>
-              ))
-            }
-          </div>
-          <div className="row">
-           {
-            basicPrices.map(price=>(
-               <div className="col-4 text-center p-2">{price}</div>
-              ))
-            }
-          </div>
-            
-         </div>
-         <div className="col-3">
-          <p className="text-center p-2">Essentials</p>
-         <div className="row">
-           {
-            vehicleNames.map(name=>(
-               <div className="col-4 text-center p-2">{name}</div>
-              ))
-            }
-          </div>
-           <div className="row">
-           {
-            essentialPrices.map(price=>(
-               <div className="col-4 text-center p-2">{price}</div>
-              ))
-            }
-          </div>
-         </div>
-         <div className="col-3">
-          <p className="text-center p-2">Premium</p>
-          <div className="row">
-           {
-            vehicleNames.map(name=>(
-               <div className="col-4 text-center p-2">{name}</div>
-              ))
-            }
-          </div>
-           <div className="row">
-           {
-            premiumPrices.map(price=>(
-               <div className="col-4 text-center p-2">{price}</div>
-              ))
-            }
-          </div>
-         </div>
-         </div>
-         <h5 className="my-3">Includes:</h5>
-         <div className="row t-package">
-          <div className="col-3 p-0">
-       {
-        pricingData.map(name=>(
-          <p className="p-2" style={{borderBottom:'1px solid red'}}>{name}</p>
-        ))
-       }
-          </div>
-          <div className="col-3 p-0">
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-          </div>
-          <div className="col-3 p-0">
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-          </div>
-          <div className="col-3 p-0">
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-            <p className="p-2 text-center" style={{borderBottom:'1px solid red'}}>
-              <img src="/assets/img/icon/price-table-icon.svg"  alt="..." />
-            </p>
-          </div>
-          
-          
-         </div>
+  </div>
+  
+</div>
+
+ 
         </div>
         <Regularpackages/>
         </div>
         <div className="ak-height-100 ak-height-lg-80"></div>
-      </div>
+     
     </>
   );
 };

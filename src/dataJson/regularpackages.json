@@ -1,0 +1,47 @@
+[
+{
+"name": "Exterior Ultra Foam Wash",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Interior Vacuuming",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Dashboard Wipe Down",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Console Wipe Down",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Interior Shampoo",
+"includes":["essential","premium"]
+},
+{
+"name": "Interior Trim Polish",
+"includes":["essential","premium"]
+},
+{
+"name": "Steam Cleaning (Seats/Carpets)",
+"includes":["premium"]
+},
+{
+"name": "Engine Bay Wipe-Down (extra charges for pet hair)",
+"includes":["premium"]
+},
+{
+"name": "Interior Deodorizer",
+"includes":["premium"]
+},
+{
+"name": "Headliner Spot Cleaning",
+"includes":["premium"]
+},
+{
+"name": "Basic Paint Correction",
+"includes":["premium"]
+}
+
+]

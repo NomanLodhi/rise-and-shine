@@ -1,0 +1,102 @@
+[
+{
+"name": "Exterior Ultra Foam Wash",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Wheel & Tire Cleaning",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Bug Splatter Removal",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Tire Shine Coating",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Glass Cleaning (Windows, Mirrors)",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Interior Vacuuming",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Dashboard & Trim Cleaning",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Pet Hair Removal",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Seat Belt Cleaning",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Seat Belt Cleaning",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Basic Paint Correction (Single stage)",
+"includes":["basic","essential","premium"]
+},
+{
+"name": "Clay Bar Treatment",
+"includes":["essential","premium"]
+},
+{
+"name": "Interior Shampoo",
+"includes":["essential","premium"]
+},
+{
+"name": "Interior Trim Polish",
+"includes":["essential","premium"]
+},
+{
+"name": "Door Panel & Cupholder Cleaning",
+"includes":["essential","premium"]
+},
+{
+"name": "Paint Protection Spray (6-month durability)",
+"includes":["essential","premium"]
+},
+{
+"name": "Steam Cleaning (Seats, Carpets, Mats)",
+"includes":["premium"]
+},
+{
+"name": "Headliner Spot Cleaning",
+"includes":["premium"]
+},
+{
+"name": "Engine Bay Wipe-Down",
+"includes":["premium"]
+},
+{
+"name": "Rain Repellent on Glass",
+"includes":["premium"]
+},
+{
+"name": "Undercarriage Rinse",
+"includes":["premium"]
+},
+{
+"name": "Interior Deodorizer Treatment",
+"includes":["premium"]
+},
+{
+"name": "Wheel Detailing",
+"includes":["premium"]
+},
+{
+"name": "Trim Restoration",
+"includes":["premium"]
+},
+{
+"name": "Advanced Paint Correction (Multi-stage)",
+"includes":["premium"]
+}
+]

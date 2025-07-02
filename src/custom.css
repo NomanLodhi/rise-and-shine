@@ -14,6 +14,11 @@
   color: black !important;
   margin: 10px;
 }
+.row-head th{
+  background-color: transparent !important;
+  padding:0 !important;
+  border: none !important; 
+}
 .footer.style-1 .copy-right {
     padding: 24px 0px;
     display: flex;
@@ -25,6 +30,10 @@
 background: rgba(255, 61, 36, 0.6) !important;
 color: white !important;
 border: none !important;
+}
+.t-package{
+  background-color: white;
+  color: black;
 }
 .t-package div{
 border: 1px solid red;
