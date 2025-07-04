@@ -108,7 +108,7 @@ export default function MainGallery() {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="my-5">
+    <div className="my-5 container">
       <h2 style={{ textAlign: "center", marginBottom: "30px" , marginTop:'30px' }}>Media Gallery</h2>
       <div
         style={{

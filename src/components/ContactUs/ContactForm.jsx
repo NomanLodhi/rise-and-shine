@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
+  const formRef = useRef();
+  const recaptchaRef = useRef();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     topic: "",
-    subject: "",
     msg: "",
   });
 
   const [alertMessage, setAlertMessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const validate = () => {
@@ -32,8 +34,8 @@ const ContactForm = () => {
     if (!formData.email) {
       isValid = false;
       tempErrors["email"] = "Please enter your email address.";
-    } else if (typeof formData.email !== "undefined") {
-      let pattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    } else {
+      let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!pattern.test(formData.email)) {
         isValid = false;
         tempErrors["email"] = "Please enter a valid email address.";
@@ -42,17 +44,17 @@ const ContactForm = () => {
 
     if (!formData.topic) {
       isValid = false;
-      tempErrors["topic"] = "Please enter a topic.";
-    }
-
-    if (!formData.subject) {
-      isValid = false;
-      tempErrors["subject"] = "Please enter a subject.";
+      tempErrors["topic"] = "Please enter your phone number.";
     }
 
     if (!formData.msg) {
       isValid = false;
       tempErrors["msg"] = "Please enter your message.";
+    }
+
+    if (!captchaToken) {
+      isValid = false;
+      tempErrors["captcha"] = "Please verify that you're not a robot.";
     }
 
     setErrors(tempErrors);
@@ -62,69 +64,63 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      alert("Your message has been sent successfully!");
-
-      setFormData({
-        name: "",
-        email: "",
-        topic: "",
-        subject: "",
-        msg: "",
-      });
+      emailjs
+        .sendForm(
+          "service_qnuu0jk", 
+          "template_iky7i6d", 
+          formRef.current,
+          "mDZMD3BBODLf_Px_6"   // Replace with your public key
+        )
+        .then(
+          (result) => {
+            setAlertMessage("Your message has been sent successfully!");
+            setFormData({
+              name: "",
+              email: "",
+              topic: "",
+              msg: "",
+            });
+            recaptchaRef.current.reset();
+            setCaptchaToken(null);
+            setErrors({});
+          },
+          (error) => {
+            setAlertMessage("Something went wrong. Please try again later.");
+          }
+        );
     }
   };
 
   return (
-    <div className="container">
-      <div className="ak-height-100 ak-height-lg-40"></div>
-      <div className="ak-height-125 ak-height-lg-80"></div>
+    <div className="container my-5" style={{marginTop:'300px !important'}}>
       <div className="contact-content">
-        <div
-          className="contact-title-section"
-          data-aos="fade-up"
-          data-aos-delay="700"
-        >
-          <h2 className="contact-form-title ak-white-color text-uppercase">
-            Contact Us
-          </h2>
+        <div className="contact-title-section" data-aos="fade-up" data-aos-delay="700">
+          <h2 className="contact-form-title ak-white-color text-uppercase">Contact Us</h2>
           <p>Home / Contact</p>
         </div>
-        <div className="ak-height-25 ak-height-lg-20"></div>
+
         <div className="contact-form" data-aos="fade-up" data-aos-delay="750">
-          <div>
-            <h5 className="mb-3">How can we help?</h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour
-            </p>
-            <div className="ak-height-45 ak-height-lg-30"></div>
-          </div>
           <div id="ak-alert">{alertMessage && <p>{alertMessage}</p>}</div>
-          <form method="POST" id="contact-form" onSubmit={handleSubmit}>
+
+          <form ref={formRef} onSubmit={handleSubmit}>
             <div className="from-inputs">
               <div className="type_1">
-                <label htmlFor="name" className="form-label">
-                  Full Name
-                </label>
+                <label htmlFor="name">Full Name</label>
                 <input
                   type="text"
                   name="name"
-                  id="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
                 />
                 {errors.name && <p className="error">{errors.name}</p>}
               </div>
+
               <div className="type_1">
-                <label htmlFor="email" className="form-label">
-                  Email*
-                </label>
+                <label htmlFor="email">Email*</label>
                 <input
                   type="email"
                   name="email"
-                  id="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -132,32 +128,27 @@ const ContactForm = () => {
                 {errors.email && <p className="error">{errors.email}</p>}
               </div>
             </div>
+
             <div className="from-inputs">
               <div className="type_1">
-                <label htmlFor="topic" className="form-label">
-                  Phone Number *
-                </label>
+                <label htmlFor="topic">Phone Number *</label>
                 <input
-                  type="number"
+                  type="text"
                   name="topic"
-                  id="topic"
                   value={formData.topic}
                   onChange={handleChange}
                   required
                 />
                 {errors.topic && <p className="error">{errors.topic}</p>}
               </div>
-             
             </div>
+
             <div className="from-textarea">
               <div className="type_1">
-                <label htmlFor="msg" className="form-label">
-                  Your Message*
-                </label>
+                <label htmlFor="msg">Your Message*</label>
                 <textarea
                   name="msg"
                   rows="5"
-                  id="msg"
                   value={formData.msg}
                   onChange={handleChange}
                   required
@@ -166,13 +157,16 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="ak-height-40 ak-height-lg-20"></div>
-            <button
-              type="submit"
-              id="submit"
-              name="submit"
-              className="common-btn"
-            >
+            <div className="my-3">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" 
+                onChange={(token) => setCaptchaToken(token)}
+              />
+              {errors.captcha && <p className="error">{errors.captcha}</p>}
+            </div>
+
+            <button type="submit" className="common-btn">
               SEND MESSAGE
             </button>
           </form>

@@ -12,7 +12,7 @@ export default function Regularpackages() {
                 title={"Regular Packages (Maintenance Level)"}
                 />
                 </div>
-              <div className="price-table-container">
+          
               <ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
                 <li class="nav-item " role="presentation">
                   <button class="nav-link active" id="homet-tab" data-bs-toggle="tab" data-bs-target="#homet-tab-pane" type="button" role="tab" aria-controls="homet-tab-pane" aria-selected="true">Cars</button>
@@ -25,6 +25,7 @@ export default function Regularpackages() {
                 </li>
                 
               </ul>
+                  <div className="price-table-container">
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active py-5" id="homet-tab-pane" role="tabpanel" aria-labelledby="homet-tab" tabindex="0">
                    <table className="table table-striped table-hover ">
@@ -160,8 +161,8 @@ export default function Regularpackages() {
                 </div>
                 </div>
               </div>
+              </div>
     
         </div>
-    </div>
   )
 }

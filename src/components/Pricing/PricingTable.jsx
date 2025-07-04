@@ -37,7 +37,7 @@ const PricingTable = ({ type }) => {
                 title={"Popular Packages (For Full Detailing)"}
                 />
  </div>
-        <div className="price-table-container">
+        
           
 <ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
   <li class="nav-item " role="presentation">
@@ -51,6 +51,7 @@ const PricingTable = ({ type }) => {
   </li>
   
 </ul>
+<div className="price-table-container">
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active py-5" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
      <table className="table table-striped table-hover ">
@@ -186,12 +187,25 @@ const PricingTable = ({ type }) => {
   </div>
   </div>
   
+        </div>
 </div>
 
  
         </div>
-        <Regularpackages/>
+        <div className="container-fluid bg-dark py-5">
+          <div className="container">
+            <div className="row">
+            <div className="col-lg-7 p-3">
+              <h1 className="text-light display-3 fw-bold" >Got a project?</h1>
+            </div>
+            <div className="col-lg-4 p-4 d-flex align-items-center">
+          <a className="btn  btn-light rounded-pill px-4" href="https://form.jotform.com/251835755283263" target="_main">Book an appointment</a>
+
+            </div>
+          </div>
+          </div>
         </div>
+        <Regularpackages/>
         <div className="ak-height-100 ak-height-lg-80"></div>
      
     </>
