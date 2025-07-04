@@ -4,7 +4,6 @@ import "yet-another-react-lightbox/styles.css";
 import Video from "yet-another-react-lightbox/plugins/video";
 
 const mediaItems = [
-  
   {
     type: "video",
     width: 1280,
@@ -41,7 +40,6 @@ const mediaItems = [
       },
     ],
   },
-  
   {
     type: "video",
     width: 1280,
@@ -68,38 +66,18 @@ const mediaItems = [
   },
   {
     type: "image",
-    src: "/assets/img/gallery/gallery_1.jpg",
-    thumbnail: "/assets/img/gallery/gallery_1.jpg",
+    src: "/assets/img/gallery/IMG_8109 (1).png",
+    thumbnail: "/assets/img/gallery/IMG_8109 (1).png",
   },
   {
     type: "image",
-    src: "/assets/img/gallery/gallery_2.jpg",
-    thumbnail: "/assets/img/gallery/gallery_2.jpg",
+    src: "/assets/img/gallery/IMG_8109 (2).png",
+    thumbnail: "/assets/img/gallery/IMG_8109 (2).png",
   },
   {
     type: "image",
-    src: "/assets/img/gallery/gallery_3.jpg",
-    thumbnail: "/assets/img/gallery/gallery_3.jpg",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/gallery_4.jpg",
-    thumbnail: "/assets/img/gallery/gallery_4.jpg",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/gallery_5.jpg",
-    thumbnail: "/assets/img/gallery/gallery_5.jpg",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/gallery_6.jpg",
-    thumbnail: "/assets/img/gallery/gallery_6.jpg",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/gallery_7.jpg",
-    thumbnail: "/assets/img/gallery/gallery_7.jpg",
+    src: "/assets/img/gallery/IMG_8109 (4).png",
+    thumbnail: "/assets/img/gallery/IMG_8109 (4).png",
   }
 ];
 
@@ -109,7 +87,9 @@ export default function MainGallery() {
 
   return (
     <div className="my-5 container">
-      <h2 style={{ textAlign: "center", marginBottom: "30px" , marginTop:'30px' }}>Media Gallery</h2>
+      <h2 style={{ textAlign: "center", marginBottom: "30px", marginTop: "30px" }}>
+        Media Gallery
+      </h2>
       <div
         style={{
           display: "flex",
@@ -133,12 +113,8 @@ export default function MainGallery() {
               borderRadius: "10px",
               transition: "transform 0.3s ease",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "scale(1)")
-            }
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
             {item.type === "image" ? (
               <img
@@ -156,11 +132,19 @@ export default function MainGallery() {
                 src={item.sources[0].src}
                 poster={item.poster}
                 muted
+                preload="none"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   borderRadius: "10px",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.play();
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.pause();
+                  e.currentTarget.currentTime = 0;
                 }}
               />
             )}

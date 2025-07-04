@@ -58,9 +58,9 @@ const PricingTable = ({ type }) => {
   <thead>
     <tr className="row-head">
       <th scope="col"> </th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
     </tr>
       
   </thead>
@@ -100,13 +100,13 @@ const PricingTable = ({ type }) => {
 
     </div>
     <div class="tab-pane fade py-5" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-    <table className="table table-striped table-hover ">
+    <table className="table table-striped table-hover table-dark ">
   <thead>
     <tr className="row-head">
       <th scope="col"> </th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
     </tr>
       
   </thead>
@@ -147,9 +147,9 @@ const PricingTable = ({ type }) => {
   <thead>
     <tr className="row-head">
       <th scope="col"> </th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
+      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
     </tr>
       
   </thead>

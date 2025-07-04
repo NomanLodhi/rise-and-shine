@@ -32,9 +32,9 @@ export default function Regularpackages() {
                 <thead>
                   <tr className="row-head">
                     <th scope="col"> </th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
                   </tr>
                     
                 </thead>
@@ -78,9 +78,9 @@ export default function Regularpackages() {
                 <thead>
                   <tr className="row-head">
                     <th scope="col"> </th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
                   </tr>
                     
                 </thead>
@@ -121,9 +121,9 @@ export default function Regularpackages() {
                 <thead>
                   <tr className="row-head">
                     <th scope="col"> </th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-success">Basic</p></h4></th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-primary">Essentials</p></h4></th>
-                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-danger">Premium</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
+                    <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
                   </tr>
                     
                 </thead>
