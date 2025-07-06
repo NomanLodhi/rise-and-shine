@@ -25,7 +25,7 @@ const sliderData = [
 
 const Testimonial = () => {
 
-  console.log(reviews)
+  
   const swiperRef = useRef(null);
   return (
     <div>
