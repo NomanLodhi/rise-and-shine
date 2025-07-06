@@ -24,13 +24,7 @@ const sliderData = [
 ];
 
 const Testimonial = () => {
-const [reviews,setReviews]=useState({})
-  useEffect(()=>{
-   fetch('https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJa-TTPbxK0C4Ryumnn5mwOqs&fields=name,rating,reviews&key=AIzaSyCw9QzhYBtsrTVntQxQySNhRy6nXgaKGEo')
-   .then(res=>res.json())
-   .then(data=>setReviews(data))
-   .catch(err=>console.log(err))
-  })
+
   console.log(reviews)
   const swiperRef = useRef(null);
   return (
