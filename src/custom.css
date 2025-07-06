@@ -22,11 +22,15 @@
   padding:0 !important;
   border: none !important; 
 }
-
+.card-review{
+  padding: 50px !important;
+}
 .row-head > th > h4 > .text-bg-heading{
   background-color: #58151c !important;
 }
-
+.bg-sec {
+  background-color:rgba(255, 61, 36, 0.6);
+}
 .footer.style-1 .copy-right {
     padding: 24px 0px;
     display: flex;
@@ -92,6 +96,15 @@ tbody tr:nth-child(odd) td{
 button{
   font-family: 'lg';
 }
+.option-all .option .title{
+  font-size: 15px !important;
+}
+.option-all .option .icon img{
+width: 15px;
+}
+.pricing-card{
+margin: 30px 0;
+}
 /* Responsiveness */
 @media (max-width:570px) {
   .t-package{
@@ -99,6 +112,9 @@ button{
   }
   .price-table-container{
   overflow-x: scroll !important;
+}
+.card-review{
+  padding: 50px 20px  !important;
 }
 }
 

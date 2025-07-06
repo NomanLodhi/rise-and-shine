@@ -54,136 +54,227 @@ const PricingTable = ({ type }) => {
 <div className="price-table-container">
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active py-5" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-     <table className="table table-striped table-hover ">
-  <thead>
-    <tr className="row-head">
-      <th scope="col"> </th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
-    </tr>
-      
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="col"></td>
-      <td scope="col" className="text-center">$150</td>
-      <td scope="col" className="text-center">$190</td>
-      <td scope="col" className="text-center">$230</td>
-    </tr>
-    {
-      packages.map((data)=>(
-        <>
-        <tr>
-      <th scope="row" >{data.name}</th>
-      <td className="text-center border">{
-        data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-      <td className="text-center border">{
-        data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-      <td className="text-center border">{
-        data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-     
-    </tr>
-        </>
-      ))
-    }
-  </tbody>
-</table>
+   
+    <div className="row justify-content-center">
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card`}
+      data-aos="fade-up"
+      // data-aos-delay={aosDelay}
+    >
+      <div className="pricing-heading">
+        <p className="title">Basic</p>
+        <h2 className="discount-price">$150</h2>
+      </div>
+      <div className="option-all">
+        {packages.basic.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>   
     
+    </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card`}
+      data-aos="fade-up"
+      
+    >
+      <div className="pricing-heading">
+        <p className="title">Essential</p>
+        <h2 className="discount-price">$190</h2>
+      </div>
+      <div className="option-all">
+        {packages.essential.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card active`}
+      data-aos="fade-up"
+      
+    >
+      <div className="pricing-heading">
+        <p className="title">Premium</p>
+        <h2 className="discount-price">$230</h2>
+      </div>
+      <div className="option-all">
+        {packages.premium.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-light rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+    </div>
    
 
     </div>
     <div class="tab-pane fade py-5" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-    <table className="table table-striped table-hover table-dark ">
-  <thead>
-    <tr className="row-head">
-      <th scope="col"> </th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
-    </tr>
+     <div className="row justify-content-center">
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card`}
+      data-aos="fade-up"
+      // data-aos-delay={aosDelay}
+    >
+      <div className="pricing-heading">
+        <p className="title">Basic</p>
+        <h2 className="discount-price">$170</h2>
+      </div>
+      <div className="option-all">
+        {packages.basic.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card`}
+      data-aos="fade-up"
       
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="col"></td>
-      <td scope="col" className="text-center">$170</td>
-      <td scope="col" className="text-center">$210</td>
-      <td scope="col" className="text-center">$260</td>
-    </tr>
-    {
-      packages.map((data)=>(
-        <>
-        <tr>
-      <th scope="row" >{data.name}</th>
-      <td className="text-center border">{
-        data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-      <td className="text-center border">{
-        data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-      <td className="text-center border">{
-        data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-     
-    </tr>
-        </>
-      ))
-    }
-  </tbody>
-</table>
+    >
+      <div className="pricing-heading">
+        <p className="title">Essential</p>
+        <h2 className="discount-price">$210</h2>
+      </div>
+      <div className="option-all">
+        {packages.essential.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card active`}
+      data-aos="fade-up"
+      
+    >
+      <div className="pricing-heading">
+        <p className="title">Premium</p>
+        <h2 className="discount-price">$260</h2>
+      </div>
+      <div className="option-all">
+        {packages.premium.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-light rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+    </div>
   </div>
   <div class="tab-pane fade py-5" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-    <table className="table table-striped table-hover ">
-  <thead>
-    <tr className="row-head">
-      <th scope="col"> </th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Basic</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Essentials</p></h4></th>
-      <th scope="col"> <h4><p class="rounded-top-3 text-center p-3 text-bg-heading">Premium</p></h4></th>
-    </tr>
+     <div className="row justify-content-center">
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card`}
+      data-aos="fade-up"
+      // data-aos-delay={aosDelay}
+    >
+      <div className="pricing-heading">
+        <p className="title">Basic</p>
+        <h2 className="discount-price">$200</h2>
+      </div>
+      <div className="option-all">
+        {packages.basic.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card`}
+      data-aos="fade-up"
       
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="col"></td>
-      <td scope="col" className="text-center">$200</td>
-      <td scope="col" className="text-center">$240</td>
-      <td scope="col" className="text-center">$280</td>
-    </tr>
-    {
-      packages.map((data)=>(
-        <>
-        <tr>
-      <th scope="row" >{data.name}</th>
-      <td className="text-center border">{
-        data.includes.find(basic=> basic=='basic')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-      <td className="text-center border">{
-        data.includes.find(essential=> essential=='essential')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-      <td className="text-center border">{
-        data.includes.find(premium=> premium=='premium')?(<i class="fa-solid fa-check text-success"></i>):(<i class="fa-solid fa-xmark text-danger"></i>)
-        }
-      </td>
-     
-    </tr>
-        </>
-      ))
-    }
-  </tbody>
-</table>
+    >
+      <div className="pricing-heading">
+        <p className="title">Essential</p>
+        <h2 className="discount-price">$240</h2>
+      </div>
+      <div className="option-all">
+        {packages.essential.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+      <div className="col-lg-4 col-md-6">
+         <div
+      className={`pricing-card active`}
+      data-aos="fade-up"
+      
+    >
+      <div className="pricing-heading">
+        <p className="title">Premium</p>
+        <h2 className="discount-price">$280</h2>
+      </div>
+      <div className="option-all">
+        {packages.premium.map((data) => (
+          <div className="option" >
+            <div className="icon">
+              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+            </div>
+            <p className="title">{data}</p>
+          </div>
+        ))}
+      </div>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-light rounded-pill my-3 px-4">Book now</a>
+    </div>
+      </div>
+    </div>
   </div>
   </div>
   
@@ -192,7 +283,7 @@ const PricingTable = ({ type }) => {
 
  
         </div>
-        <div className="container-fluid bg-dark py-5">
+        <div className="container-fluid bg-sec py-5">
           <div className="container">
             <div className="row">
             <div className="col-lg-7 p-3">
@@ -205,8 +296,7 @@ const PricingTable = ({ type }) => {
           </div>
           </div>
         </div>
-        <Regularpackages/>
-        <div className="ak-height-100 ak-height-lg-80"></div>
+        {/* <Regularpackages/> */}
      
     </>
   );

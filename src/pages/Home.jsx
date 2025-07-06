@@ -12,9 +12,9 @@ import Blogs from "../components/Blog/Blogs";
 import Teams from "../components/Team/Teams";
 import AutoCounter from "../components/AutoCounter/AutoCounter";
 import MainGallery from "../components/MainGallery/MainGallery";
-
-
+import { useEffect } from "react";
 export default function Home() {
+
   return (
     <>
       <HeroSlider />
@@ -22,9 +22,9 @@ export default function Home() {
       <ServiceProgres />
       <MainGallery/>
       <Services styleTypeTwo={true} />
+      <Testimonial /> 
       {/* <AutoCounter />
       <TrustedClient />
-      <Testimonial /> */}
       {/* <Teams /> */}
       {/* <PricingTable /> */}
       {/* <Blogs styleTypeTwo={true} /> */}

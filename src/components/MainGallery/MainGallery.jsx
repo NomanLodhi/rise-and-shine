@@ -78,7 +78,7 @@ const mediaItems = [
     type: "image",
     src: "/assets/img/gallery/IMG_8109 (4).png",
     thumbnail: "/assets/img/gallery/IMG_8109 (4).png",
-  }
+  },
 ];
 
 export default function MainGallery() {
@@ -152,13 +152,24 @@ export default function MainGallery() {
         ))}
       </div>
 
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        index={index}
-        slides={mediaItems}
-        plugins={[Video]}
-      />
+     <Lightbox
+  open={open}
+  close={() => setOpen(false)}
+  index={index}
+  slides={mediaItems}
+  plugins={[Video]}
+  on={{
+    view: () => {
+      setTimeout(() => {
+        const video = document.querySelector('.yarl__slide_current video');
+        if (video) {
+          video.muted = true;
+          video.play().catch(() => {});
+        }
+      }, 300);
+    }
+  }}
+/>
     </div>
   );
 }

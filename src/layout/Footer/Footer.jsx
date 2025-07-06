@@ -51,7 +51,6 @@ const Footer = () => {
 
   return (
     <>
-      <div className="ak-height-125 ak-height-lg-80"></div>
       <footer className="footer style-1 footer-bg">
         <div className="container">
           <div className="ak-height-40 ak-height-lg-60"></div>

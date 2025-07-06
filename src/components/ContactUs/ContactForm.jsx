@@ -92,7 +92,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container" style={{marginTop:'250px'}}>
+    <div className="container" style={{marginTop:'250px',marginBottom:"250px"}}>
       <div className="contact-content">
         <div className="contact-title-section" data-aos="fade-up" data-aos-delay="700">
           <h2 className="contact-form-title ak-white-color text-uppercase">Contact Us</h2>
