@@ -11,7 +11,7 @@ const mediaItems = [
     poster: "/assets/img/gallery/IMG (1).jpeg",
     sources: [
       {
-        src: "/src/videos/IMG_7552.mp4",
+        src: "/assets/videos/IMG_7552.mp4",
         type: "video/mp4",
       },
     ],
@@ -20,10 +20,10 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/IMG (2).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (2).jpeg",
     sources: [
       {
-        src: "/src/videos/IMG_8048.mp4",
+        src: "/assets/videos/IMG_8048.mp4",
         type: "video/mp4",
       },
     ],
@@ -32,10 +32,10 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/IMG (3).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (3).jpeg",
     sources: [
       {
-        src: "/src/videos/IMG_8049.mp4",
+        src: "/assets/videos/IMG_8049.mp4",
         type: "video/mp4",
       },
     ],
@@ -44,10 +44,10 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/IMG (4).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (4).jpeg",
     sources: [
       {
-        src: "/src/videos/IMG_9082.mp4",
+        src: "/assets/videos/IMG_9082.mp4",
         type: "video/mp4",
       },
     ],
@@ -56,10 +56,10 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/IMG (5).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (5).jpeg",
     sources: [
       {
-        src: "/src/videos/IMG_9084.mp4",
+        src: "/assets/videos/IMG_9084.mp4",
         type: "video/mp4",
       },
     ],

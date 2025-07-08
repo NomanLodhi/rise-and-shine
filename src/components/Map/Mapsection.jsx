@@ -10,7 +10,7 @@ export default function Mapsection() {
                 <SectionHeading
                            title={"Areas we covered"}
                            />
-                <h5 className='text-center py-5'>List of the places that my service covers anything further than this will be a $30 charge for fuel:</h5>           
+                <h5 className='text-center py-5'>List of the places that our services covers anything further than this will be a $30 charge for fuel</h5>           
             </div>
       <Map/>
     </div>
