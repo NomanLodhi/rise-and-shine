@@ -66,18 +66,48 @@ const mediaItems = [
   },
   {
     type: "image",
-    src: "/assets/img/gallery/IMG_8109 (1).png",
-    thumbnail: "/assets/img/gallery/IMG_8109 (1).png",
+    src: "/assets/img/gallery/IMG (1).png",
+    thumbnail: "/assets/img/gallery/IMG (1).png",
   },
   {
     type: "image",
-    src: "/assets/img/gallery/IMG_8109 (2).png",
-    thumbnail: "/assets/img/gallery/IMG_8109 (2).png",
+    src: "/assets/img/gallery/IMG (2).png",
+    thumbnail: "/assets/img/gallery/IMG (2).png",
   },
   {
     type: "image",
-    src: "/assets/img/gallery/IMG_8109 (4).png",
-    thumbnail: "/assets/img/gallery/IMG_8109 (4).png",
+    src: "/assets/img/gallery/IMG (4).png",
+    thumbnail: "/assets/img/gallery/IMG (4).png",
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (5).png",
+    thumbnail: "/assets/img/gallery/IMG (5).png",
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (6).png",
+    thumbnail: "/assets/img/gallery/IMG (6).png",
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (7).png",
+    thumbnail: "/assets/img/gallery/IMG (7).png",
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (8).png",
+    thumbnail: "/assets/img/gallery/IMG (8).png",
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (9).png",
+    thumbnail: "/assets/img/gallery/IMG (9).png",
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (10).png",
+    thumbnail: "/assets/img/gallery/IMG (10).png",
   },
 ];
 

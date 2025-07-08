@@ -17,6 +17,7 @@ const footerDataArray = [
     links: [
       { title: "About", link: "/about" },
       { title: "Service", link: "/service" },
+      { title: "Packages", link: "/pricing" },
       { title: "Contact Us", link: "/contact" },
     ],
   },

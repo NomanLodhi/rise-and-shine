@@ -63,10 +63,9 @@ const [expandedCardId, setExpandedCardId] = useState(null);
         
             <div className="container mx-auto ">
               <SectionHeading
-                bgText={"Services"}
-                title={"Dedicated is Services"}
+                title={"Services"}
+                />
                
-              />
               <div className="ak-height-50 ak-height-lg-10"></div>
               <div className="d-flex justify-content-center">
                 <MoreBtn to="/service" >VIEW All SERVICES</MoreBtn>

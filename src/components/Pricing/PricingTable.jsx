@@ -76,7 +76,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>   
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn-package-normal">Book now</a>   
     
     </div>
       </div>
@@ -100,7 +100,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn-package-normal">Book now</a>
     </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -123,7 +123,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-light rounded-pill my-3 px-4">Book now</a>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn-package-premium">Book now</a>
     </div>
       </div>
     </div>
@@ -152,7 +152,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="common-btn">Book now</a>
     </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -175,7 +175,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="common-btn">Book now</a>
     </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -225,7 +225,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="common-btn">Book now</a>
     </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -248,7 +248,7 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-        <a href="https://form.jotform.com/251835755283263" target="_main" className="btn btn-danger rounded-pill my-3 px-4">Book now</a>
+        <a href="https://form.jotform.com/251835755283263" target="_main" className="common-btn">Book now</a>
     </div>
       </div>
       <div className="col-lg-4 col-md-6">
@@ -290,7 +290,7 @@ const PricingTable = ({ type }) => {
               <h1 className="text-light display-3 fw-bold" >Got a project?</h1>
             </div>
             <div className="col-lg-4 p-4 d-flex align-items-center">
-          <a className="btn  btn-light rounded-pill px-4" href="https://form.jotform.com/251835755283263" target="_main">Book an appointment</a>
+          <a className=" common-btn" href="https://form.jotform.com/251835755283263" target="_main">Book an appointment</a>
 
             </div>
           </div>

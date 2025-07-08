@@ -22,6 +22,49 @@
   padding:0 !important;
   border: none !important; 
 }
+
+.btn-package-normal{
+    padding: 15px 40px;
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 15px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-family: var(--heading-font-family);
+    border: none;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
+    transition: background-color 0.4s, transform 0.3s, color 0.3s;
+    transform: translate3d(0, 0px, 0px);
+  }
+.btn-package-premium{
+    padding: 15px 40px;
+    display: inline-block;
+    background-color: var(--white-color);
+    color: black;
+    font-size: 15px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-family: var(--heading-font-family);
+    border: none;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
+    transition: background-color 0.4s, transform 0.3s, color 0.3s;
+    transform: translate3d(0, 0px, 0px);
+  }
+.btn-package-premium:hover {
+    transition: background-color 0.4s, transform 0.3s, color 0.3s;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translate3d(0px, -7px, 0.01px);
+}
+.btn-package-normal:hover {
+    transition: background-color 0.4s, transform 0.3s, color 0.3s;
+    background-color: white;
+    color: var(--black-color);
+    transform: translate3d(0px, -7px, 0.01px);
+}
 .card-review{
   padding: 50px !important;
 }

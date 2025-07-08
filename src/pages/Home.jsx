@@ -13,21 +13,17 @@ import Teams from "../components/Team/Teams";
 import AutoCounter from "../components/AutoCounter/AutoCounter";
 import MainGallery from "../components/MainGallery/MainGallery";
 import { useEffect } from "react";
+import Mapsection from "../components/Map/Mapsection";
 export default function Home() {
 
   return (
     <>
       <HeroSlider />
-      {/* <ChooseUs /> */}
       <ServiceProgres />
       <MainGallery/>
       <Services styleTypeTwo={true} />
       <Testimonial /> 
-      {/* <AutoCounter />
-      <TrustedClient />
-      {/* <Teams /> */}
-      {/* <PricingTable /> */}
-      {/* <Blogs styleTypeTwo={true} /> */}
+      <Mapsection/>
     </>
   );
 }
