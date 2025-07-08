@@ -134,34 +134,17 @@ const HeroSlider = () => {
       </div>
       <div className="container">
         <div className="hero-contact-info">
-          <Link to="tel:(406)555-0120">
+          <a href="mailto:shineanddrive23@gmail.com">
             <div className="d-flex align-items-center gap-2">
               <div className="heartbeat-icon">
                 <img src="/assets/img/icon/hero-email.svg" alt="..." />
               </div>
               <p className="ak-font-18 ak-white-color ak-semi-bold">
-                example@email.com
+               shineanddrive23@gmail.com
               </p>
             </div>
-          </Link>
-          <Link to="#">
-            <div className="d-flex align-items-center gap-2">
-              <div className="heartbeat-icon">
-                <img src="/assets/img/icon/heroaddress.svg" alt="..." />
-              </div>
-              <p className="ak-font-18 ak-white-color ak-semi-bold">
-                123 Maple Street Toronto, On, Canada
-              </p>
-            </div>
-          </Link>
-          <div className="d-flex align-items-center gap-2">
-            <div className="heartbeat-icon">
-              <img src="/assets/img/icon/hero-time.svg" alt="..." />
-            </div>
-            <p className="ak-font-18 ak-white-color ak-semi-bold">
-              Sun - Thu: Open 27/7
-            </p>
-          </div>
+          </a>
+          
         </div>
       </div>
       <div className="hero-pagination">

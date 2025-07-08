@@ -21,12 +21,8 @@ const darkMapStyle = [
     stylers: [{ color: "#1d2c4d" }]
   },
   {
-    elementType: "labels.text.fill",
-    stylers: [{ color: "#8ec3b9" }]
-  },
-  {
-    elementType: "labels.text.stroke",
-    stylers: [{ color: "#1a3646" }]
+    elementType: "labels",
+    stylers: [{ visibility: "off" }] // Hides all labels
   },
   {
     featureType: "administrative.country",
