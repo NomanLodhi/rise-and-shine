@@ -2193,9 +2193,7 @@ kbd {
 .ak-site_branding {
   display: inline-block;
 }
-.ak-site_branding img {
-  max-height: 45px;
-}
+
 
 @media screen and (min-width: 1200px) {
   .ak-nav_list.ak-color_1 {
