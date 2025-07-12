@@ -132,21 +132,6 @@ const HeroSlider = () => {
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="hero-contact-info">
-          <a href="mailto:shineanddrive23@gmail.com">
-            <div className="d-flex align-items-center gap-2">
-              <div className="heartbeat-icon">
-                <img src="/assets/img/icon/hero-email.svg" alt="..." />
-              </div>
-              <p className="ak-font-18 ak-white-color ak-semi-bold">
-               shineanddrive23@gmail.com
-              </p>
-            </div>
-          </a>
-          
-        </div>
-      </div>
       <div className="hero-pagination">
         <div className="hero-swiper-pagination"></div>
       </div>

@@ -29,7 +29,7 @@ export default function NavMenu() {
       <div className="container">
         <div className="ak-main_header_in">
           <div className="ak-main-header-left">
-            <Link className="ak-site_branding" to="/">
+            <Link className="ak-site_branding site-logo"  to="/">
               <img src={logo} alt="..."  />
             </Link>
           </div>

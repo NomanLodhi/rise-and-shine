@@ -17,6 +17,11 @@ const mediaItems = [
     ],
   },
   {
+    type: "image",
+    src: "/assets/img/gallery/IMG (1).png",
+    thumbnail: "/assets/img/gallery/IMG (1).png",
+  },
+  {
     type: "video",
     width: 1280,
     height: 720,
@@ -27,6 +32,11 @@ const mediaItems = [
         type: "video/mp4",
       },
     ],
+  },
+  {
+    type: "image",
+    src: "/assets/img/gallery/IMG (2).png",
+    thumbnail: "/assets/img/gallery/IMG (2).png",
   },
   {
     type: "video",
@@ -41,6 +51,11 @@ const mediaItems = [
     ],
   },
   {
+    type: "image",
+    src: "/assets/img/gallery/IMG (4).png",
+    thumbnail: "/assets/img/gallery/IMG (4).png",
+  },
+  {
     type: "video",
     width: 1280,
     height: 720,
@@ -53,6 +68,11 @@ const mediaItems = [
     ],
   },
   {
+    type: "image",
+    src: "/assets/img/gallery/IMG (5).png",
+    thumbnail: "/assets/img/gallery/IMG (5).png",
+  },
+  {
     type: "video",
     width: 1280,
     height: 720,
@@ -63,26 +83,6 @@ const mediaItems = [
         type: "video/mp4",
       },
     ],
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/IMG (1).png",
-    thumbnail: "/assets/img/gallery/IMG (1).png",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/IMG (2).png",
-    thumbnail: "/assets/img/gallery/IMG (2).png",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/IMG (4).png",
-    thumbnail: "/assets/img/gallery/IMG (4).png",
-  },
-  {
-    type: "image",
-    src: "/assets/img/gallery/IMG (5).png",
-    thumbnail: "/assets/img/gallery/IMG (5).png",
   },
   {
     type: "image",
@@ -110,6 +110,7 @@ const mediaItems = [
     thumbnail: "/assets/img/gallery/IMG (10).png",
   },
 ];
+
 
 export default function MainGallery() {
   const [open, setOpen] = useState(false);
@@ -158,7 +159,8 @@ export default function MainGallery() {
                 }}
               />
             ) : (
-              <video
+            <div className="">
+                <video
                 src={item.sources[0].src}
                 poster={item.poster}
                 muted
@@ -177,6 +179,8 @@ export default function MainGallery() {
                   e.currentTarget.currentTime = 0;
                 }}
               />
+              <span class="ak-heartbeat-btn"><img src="/assets/img/icon/play.svg" alt="..."/></span>
+            </div>
             )}
           </div>
         ))}

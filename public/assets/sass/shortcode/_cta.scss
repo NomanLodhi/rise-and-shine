@@ -25,12 +25,18 @@
     }
   }
 }
+
 .cta .border-pr {
   min-height: 100%;
   width: 5px;
   margin-top: 10px;
-  background-color: $primary;
+  background-color: var(--primary-color);
 }
+
+.cta .cta-info .cta-btn{
+  background-color: var(--primary-color) !important;
+}
+
 
 .cta .border-wh {
   min-height: 100%;

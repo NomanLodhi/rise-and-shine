@@ -4,12 +4,12 @@
   --body-font-family: "Sarabun";
   --heading-font-family: "Oxanium";
   --body-color: #d3d3d3;
-  --body-bg-color: #101010;
+  --body-bg-color: #01010;
   --heading-color: #fff;
   --border-color: #fff;
   --white-color: #fff;
   --black-color: #000000;
-  --primary-color: #ff3d24;
+  --primary-color:#ffc107;
 }
 
 /*--------------------------------------------------------------
@@ -1080,7 +1080,7 @@ kbd {
   padding: 18px 20px 18px 28px;
   display: flex;
   align-items: center;
-  background-color: rgba(255, 61, 36, 0.7);
+  background-color: var(--primary-color);
   justify-content: center;
 }
 
@@ -1095,7 +1095,7 @@ kbd {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgba(255, 61, 36, 0.7);
+  background-color: var(--primary-color);
 }
 
 .ak-heartbeat-btn:before {
@@ -1559,7 +1559,7 @@ kbd {
 .nav-pages-item::after {
   content: "+";
   margin-left: 5px;
-  color: #ff3d24;
+  color: var(--primary-color);
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 5px;
@@ -3750,13 +3750,20 @@ kbd {
           backdrop-filter: blur(100px);
 }
 .pricing-card.active {
-  background: rgba(255, 61, 36, 0.6);
+  background: var(--primary-color) !important;
 }
 .pricing-card .pricing-heading {
   margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.pricing-card{
+  transition:all 0.5s linear !important ;
+}
+.pricing-card:hover{
+  cursor: pointer;
+  transform: rotateX(360deg) !important ;
 }
 .pricing-card .pricing-heading .title {
   font-size: 18px;
