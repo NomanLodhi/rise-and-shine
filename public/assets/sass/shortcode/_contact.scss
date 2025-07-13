@@ -39,12 +39,14 @@
       }
       input {
         color: $white;
-        border: 1px solid #ff3d2470;
+        border: 1px solid  rgba(255, 193, 7, 0.761) !important;
         &:focus {
-          border-color: #ff3d2470 !important;
-          box-shadow: 0 0 0 0.25rem rgba(109, 10, 10, 0.486);
+            border-color:  rgba(255, 193, 7, 0.761) !important;
+  box-shadow: 0 0 0 0.25rem  rgba(212, 161, 7, 0.592);
         }
       }
+    
+
       .date-time-icon {
         position: absolute;
         top: 54%;
@@ -61,12 +63,12 @@
       padding: 12px 20px;
       color: $white;
       outline: none;
-      border: 1px solid $border;
+      border: 1px solid  rgba(255, 193, 7, 0.761) !important;
       flex-grow: 1;
       background-color: transparent;
       &:focus {
-        border-color: $white !important;
-        box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.19);
+          border-color:  rgba(255, 193, 7, 0.761) !important;
+  box-shadow: 0 0 0 0.25rem  rgba(212, 161, 7, 0.592);
       }
     }
     margin-bottom: 45px;
@@ -80,10 +82,10 @@
       }
       textarea {
         color: $white;
-        border: 1px solid #ff3d2470;
+        border: 1px solid  rgba(255, 193, 7, 0.761) !important;
         &:focus {
-          border-color: #ff3d2470 !important;
-          box-shadow: 0 0 0 0.25rem rgba(109, 10, 10, 0.486);
+            border-color:  rgba(255, 193, 7, 0.761) !important;
+  box-shadow: 0 0 0 0.25rem  rgba(212, 161, 7, 0.592);
         }
       }
     }

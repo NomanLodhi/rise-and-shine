@@ -143,6 +143,7 @@ export default function MainGallery() {
               cursor: "pointer",
               borderRadius: "10px",
               transition: "transform 0.3s ease",
+              
             }}
             onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
@@ -159,7 +160,7 @@ export default function MainGallery() {
                 }}
               />
             ) : (
-            <div className="">
+               <div>
                 <video
                 src={item.sources[0].src}
                 poster={item.poster}
@@ -178,9 +179,10 @@ export default function MainGallery() {
                   e.currentTarget.pause();
                   e.currentTarget.currentTime = 0;
                 }}
-              />
-              <span class="ak-heartbeat-btn"><img src="/assets/img/icon/play.svg" alt="..."/></span>
-            </div>
+                />
+            <div class="ak-heartbeat-btn play-btn"><img src="/assets/img/icon/play.svg" alt="..."/></div>
+                </div>
+              
             )}
           </div>
         ))}

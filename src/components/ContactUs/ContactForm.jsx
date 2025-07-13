@@ -69,7 +69,7 @@ const ContactForm = () => {
           "service_qnuu0jk", 
           "template_iky7i6d", 
           formRef.current,
-          "mDZMD3BBODLf_Px_6"   // Replace with your public key
+          "mDZMD3BBODLf_Px_6"   
         )
         .then(
           (result) => {
