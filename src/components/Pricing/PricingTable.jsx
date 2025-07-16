@@ -73,7 +73,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+        <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>  
     </div>
 
     
@@ -108,10 +114,16 @@ const PricingTable = ({ type }) => {
               <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
             </div>
             <p className="title">{data}</p>
-         
           </div>
         ))}
       </div>
+           <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>
           
     </div>
 
@@ -149,7 +161,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+          <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>
     </div>
 
     
@@ -192,7 +210,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+          <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>
     </div>
 
     
@@ -229,7 +253,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+          <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>
     </div>
 
     
@@ -266,7 +296,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+        <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>  
     </div>
 
     
@@ -307,7 +343,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+         <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a> 
     </div>
 
     
@@ -344,7 +386,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+       <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>   
     </div>
 
     
@@ -381,7 +429,13 @@ const PricingTable = ({ type }) => {
           </div>
         ))}
       </div>
-          
+          <a
+        href="https://form.jotform.com/251835755283263"
+        target="_blank"
+        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+      >
+        Book now
+      </a>
     </div>
 
     
@@ -407,6 +461,66 @@ const PricingTable = ({ type }) => {
 
  
         </div>
+          <div className="container py-5  ">
+<SectionHeading
+                title={"ADD ONS"}
+                />
+ </div>
+      <div className="price-table-container my-5">
+        <div className="container">
+  <div className="row">
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light add-card my-2 py-4">
+      <span>Engine cleaning</span>
+      <span>$50-80</span>
+    </div>
+     </div>
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Headlight restoration</span>
+      <span>$50</span>
+    </div>
+     </div>
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Advanced paint correction</span>
+      <span>$200-300</span>
+    </div>
+     </div>
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Polishing </span>
+      <span>$120-220</span>
+    </div>
+     </div>
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Plastic trim layer of protection </span>
+      <span>$20</span>
+    </div>
+     </div>
+    <div className="col-lg-6">
+       <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Interior deodorizer</span>
+      <span>$50</span>
+    </div>
+    </div>
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Headliner spot cleaning</span>
+      <span>$30</span>
+    </div>
+     </div>
+     <div className="col-lg-6">
+      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <span>Air freshener</span>
+      <span>$10</span>
+    </div>
+     </div>
+  </div>
+
+        </div>
+      </div>
         <div className="container-fluid bg-sec py-5">
           <div className="container">
             <div className="row">
@@ -420,52 +534,7 @@ const PricingTable = ({ type }) => {
           </div>
           </div>
         </div>
-        <div className="container py-5  ">
-<SectionHeading
-                title={"ADD ONS"}
-                />
- </div>
-      <div className="price-table-container my-5">
-        <div className="container">
-        <table class="table my-2 table-addons bg-transparent table-bordered border-warning">
- 
-  <tbody>
-     <tr>
-      <td >Engine cleaning</td>
-      <td>$50-80</td>
-    </tr>
-     <tr>
-      <td>Headlight restoration</td>
-      <td>$50</td>
-    </tr>
-     <tr>
-      <td>Advanced paint correction</td>
-      <td>$200-300</td>
-    </tr>
-     <tr>
-      <td>Polishing </td>
-      <td>$120-220</td>
-    </tr>
-     <tr>
-      <td>Plastic trim layer of protection </td>
-      <td>$20</td>
-    </tr>
-     <tr>
-      <td>Interior deodorizer</td>
-      <td>$50</td>
-    </tr>
-     <tr>
-      <td>Headliner spot cleaning</td>
-      <td>$30</td>
-    </tr>
-     <tr>
-      <td>Air freshener</td>
-      <td>$10</td>
-    </tr>
-  </tbody>
-</table>
-        </div>
-      </div>
+      
      
     </>
   );
