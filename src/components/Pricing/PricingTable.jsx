@@ -24,12 +24,7 @@ const PricingTable = ({ type }) => {
         <div className="container">
           {type || (
             <>
-              <SectionHeading
-                type={true}
-                bgText="Pricing"
-                title="Pricing"
-                desp="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
-              />
+              
               <div className="ak-height-50 ak-height-lg-50"></div>
             </>
           )}
@@ -406,8 +401,8 @@ const PricingTable = ({ type }) => {
     </div>
   </div>
   </div>
-  
         </div>
+  
 </div>
 
  
@@ -425,7 +420,52 @@ const PricingTable = ({ type }) => {
           </div>
           </div>
         </div>
-        {/* <Regularpackages/> */}
+        <div className="container py-5  ">
+<SectionHeading
+                title={"ADD ONS"}
+                />
+ </div>
+      <div className="price-table-container my-5">
+        <div className="container">
+        <table class="table my-2 table-addons bg-transparent table-bordered border-warning">
+ 
+  <tbody>
+     <tr>
+      <td >Engine cleaning</td>
+      <td>$50-80</td>
+    </tr>
+     <tr>
+      <td>Headlight restoration</td>
+      <td>$50</td>
+    </tr>
+     <tr>
+      <td>Advanced paint correction</td>
+      <td>$200-300</td>
+    </tr>
+     <tr>
+      <td>Polishing </td>
+      <td>$120-220</td>
+    </tr>
+     <tr>
+      <td>Plastic trim layer of protection </td>
+      <td>$20</td>
+    </tr>
+     <tr>
+      <td>Interior deodorizer</td>
+      <td>$50</td>
+    </tr>
+     <tr>
+      <td>Headliner spot cleaning</td>
+      <td>$30</td>
+    </tr>
+     <tr>
+      <td>Air freshener</td>
+      <td>$10</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+      </div>
      
     </>
   );

@@ -1,21 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Video from "yet-another-react-lightbox/plugins/video";
 
 const mediaItems = [
-  {
-    type: "video",
-    width: 1280,
-    height: 720,
-    poster: "/assets/img/gallery/IMG (1).jpeg",
-    sources: [
-      {
-        src: "/assets/videos/IMG_7552.mp4",
-        type: "video/mp4",
-      },
-    ],
-  },
+  
   {
     type: "image",
     src: "/assets/img/gallery/IMG (1).png",
@@ -109,12 +98,30 @@ const mediaItems = [
     src: "/assets/img/gallery/IMG (10).png",
     thumbnail: "/assets/img/gallery/IMG (10).png",
   },
+  {
+    type: "video",
+    width: 1280,
+    height: 720,
+    poster: "/assets/img/gallery/Thumbnail (3).jpeg",
+    sources: [
+      {
+        src: "/assets/videos/IMG_7552.mp4",
+        type: "video/mp4",
+      },
+    ],
+  }
 ];
-
-
 export default function MainGallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const [forceRender, setForceRender] = useState(false);
+
+  // ✅ Force a re-render once after mount to fix first video issue
+  useEffect(() => {
+    setTimeout(() => {
+      setForceRender(true); // causes one re-render after mount
+    }, 100);
+  }, []);
 
   return (
     <div className="my-5 container">
@@ -138,12 +145,11 @@ export default function MainGallery() {
             }}
             style={{
               width: "300px",
-              height: "180px",
+              height: "400px",
               overflow: "hidden",
               cursor: "pointer",
               borderRadius: "10px",
               transition: "transform 0.3s ease",
-              
             }}
             onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
@@ -160,52 +166,60 @@ export default function MainGallery() {
                 }}
               />
             ) : (
-               <div>
+              <div>
                 <video
-                src={item.sources[0].src}
-                poster={item.poster}
-                muted
-                preload="none"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.play();
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.pause();
-                  e.currentTarget.currentTime = 0;
-                }}
+                  key={`video-${idx}-${forceRender}`} // force update
+                  src={item.sources[0].src}
+                  poster={item.poster}
+                  muted
+                  preload="auto"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                    backgroundColor: "#000",
+                    display: "block",
+                  }}
+                  onCanPlayThrough={(e) => {
+                    // force reflow in some cases
+                    e.currentTarget.style.display = "block";
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.play();
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.pause();
+                    e.currentTarget.currentTime = 0;
+                  }}
                 />
-            <div class="ak-heartbeat-btn play-btn"><img src="/assets/img/icon/play.svg" alt="..."/></div>
+                <div className="ak-heartbeat-btn play-btn">
+                  <img src="/assets/img/icon/play.svg" alt="..." />
                 </div>
-              
+              </div>
             )}
           </div>
         ))}
       </div>
 
-     <Lightbox
-  open={open}
-  close={() => setOpen(false)}
-  index={index}
-  slides={mediaItems}
-  plugins={[Video]}
-  on={{
-    view: () => {
-      setTimeout(() => {
-        const video = document.querySelector('.yarl__slide_current video');
-        if (video) {
-          video.muted = true;
-          video.play().catch(() => {});
-        }
-      }, 300);
-    }
-  }}
-/>
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        index={index}
+        slides={mediaItems}
+        plugins={[Video]}
+        on={{
+          view: () => {
+            setTimeout(() => {
+              const video = document.querySelector(".yarl__slide_current video");
+              if (video) {
+                video.muted = true;
+                video.play().catch(() => {});
+              }
+            }, 300);
+          },
+        }}
+      />
     </div>
   );
 }
