@@ -154,6 +154,14 @@ padding: 10px;
   display: flex;
   flex-direction: row !important;
   justify-content: space-between;
+  background: radial-gradient(#7b6115b2,rgba(0, 0, 0, 0.64)) !important;
+  backdrop-filter: blur(90px) !important;
+}
+.btn-animation:hover, .cta .cta-info .cta-btn:hover {
+  font-size: 17px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  background-color: #7b6115 !important;
+  transform: translate3d(0, -8px, 0.01px);
 }
 @font-face {
   font-family: 'lg';

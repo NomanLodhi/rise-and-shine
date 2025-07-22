@@ -1414,7 +1414,7 @@ kbd {
 .btn-animation:hover, .cta .cta-info .cta-btn:hover {
   font-size: 17px !important;
   color: rgba(255, 255, 255, 0.9) !important;
-  background-color: rgba(255, 61, 36, 0.7) !important;
+  background-color: #7b6115 !important;
   transform: translate3d(0, -8px, 0.01px);
 }
 
@@ -2963,6 +2963,11 @@ kbd {
   overflow: hidden;
   transition: all 0.5s;
 }
+.service-card-img{
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .service-card .card-img img {
   transition: all 0.5s ease-in-out;
   width: 100%;

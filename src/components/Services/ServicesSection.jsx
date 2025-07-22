@@ -27,7 +27,7 @@ const [expandedCardId, setExpandedCardId] = useState(null);
     <div className="card card-service bg-black text-light rounded-0 postion-relative">
      <div className="row g-0 ">
       <div className="col-md-4">
-         <img src={`${item.img}`} className="ak-bg card-img rounded-0" alt="..." />
+         <img src={`${item.img}`} className=" service-card-img rounded-0" alt="..." />
       
       </div>
       <div className="col-md-8">

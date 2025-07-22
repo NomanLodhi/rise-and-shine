@@ -470,49 +470,49 @@ const PricingTable = ({ type }) => {
         <div className="container">
   <div className="row">
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light add-card my-2 py-4">
       <span>Engine cleaning</span>
       <span>$50-80</span>
     </div>
      </div>
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Headlight restoration</span>
       <span>$50</span>
     </div>
      </div>
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Advanced paint correction</span>
       <span>$200-300</span>
     </div>
      </div>
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Polishing </span>
       <span>$120-220</span>
     </div>
      </div>
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Plastic trim layer of protection </span>
       <span>$20</span>
     </div>
      </div>
     <div className="col-lg-6">
-       <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+       <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Interior deodorizer</span>
       <span>$50</span>
     </div>
     </div>
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Headliner spot cleaning</span>
       <span>$30</span>
     </div>
      </div>
      <div className="col-lg-6">
-      <div className="card p-2 bg-warning border border-warning card p-2 bg-warning border border-warning text-light d-flex add-card my-2 py-4">
+      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
       <span>Air freshener</span>
       <span>$10</span>
     </div>

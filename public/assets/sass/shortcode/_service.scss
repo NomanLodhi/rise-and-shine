@@ -3,6 +3,11 @@
   bottom: 132px;
   z-index: 11;
 }
+.service-card-img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
 
 .service-progress-card {
   display: flex;

@@ -45,3 +45,9 @@
   margin-top: 10px;
   background-color: #ffffff4a;
 }
+.btn-animation:hover, .cta .cta-info .cta-btn:hover {
+  font-size: 17px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  background-color: #7b6115 !important;
+  transform: translate3d(0, -8px, 0.01px);
+}
