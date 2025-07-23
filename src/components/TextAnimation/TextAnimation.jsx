@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { hoverTextAnimation } from "../../helper/main";
 import classNames from "classnames";
 
-export default function TextAnimation({ link, title, classNamePass }) {
+export default function TextAnimation({ link, title, classNamePass, onClick }) {
   const linkText = useRef();
 
   const showActivePrent = classNames("text-hover-animaiton", {
@@ -13,11 +13,13 @@ export default function TextAnimation({ link, title, classNamePass }) {
   useLayoutEffect(() => {
     hoverTextAnimation(linkText.current);
   }, [link, title]);
+
   return (
     <Link
       to={link}
       ref={linkText}
-      className={`${showActivePrent} ${classNamePass ? classNamePass : ""} `}
+      onClick={onClick} 
+      className={`${showActivePrent} ${classNamePass ? classNamePass : ""}`}
     >
       {title}
     </Link>

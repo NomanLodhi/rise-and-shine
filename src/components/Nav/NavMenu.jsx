@@ -11,17 +11,22 @@ export default function NavMenu() {
   const [navlist, setNavList] = useState("");
 
   const navBarShow = () => {
-    if (navBar == "") {
+    if (navBar === "") {
       setNavbar("ak-toggle_active");
     } else {
       setNavbar("");
     }
 
-    if (navlist == "") {
+    if (navlist === "") {
       setNavList("ak-show-moblie-nav-list");
     } else {
       setNavList("");
     }
+  };
+
+  const closeMobileMenu = () => {
+    setNavbar("");
+    setNavList("");
   };
 
   return (
@@ -29,19 +34,19 @@ export default function NavMenu() {
       <div className="container">
         <div className="ak-main_header_in">
           <div className="ak-main-header-left">
-            <Link className="ak-site_branding site-logo"  to="/">
-              <img src={logo} alt="..."  />
+            <Link className="ak-site_branding site-logo" to="/">
+              <img src={logo} alt="..." />
             </Link>
           </div>
           <div className="ak-main-header-center">
             <div className="ak-nav ak-medium">
               <ul id="ak-nav_list" className={`ak-nav_list ${navlist}`}>
                 {navitemlist?.map((item, i) => {
-                  return <MenuItem props={item} key={i} />;
+                  return <MenuItem props={item} key={i} onClick={closeMobileMenu} />;
                 })}
               </ul>
               <span
-                onClick={() => navBarShow()}
+                onClick={navBarShow}
                 id="navBar"
                 className={`ak-munu_toggle ${navBar}`}
               >
@@ -49,9 +54,7 @@ export default function NavMenu() {
               </span>
             </div>
           </div>
-          <div className="ak-main-header-right">
-            
-          </div>
+          <div className="ak-main-header-right"></div>
         </div>
       </div>
     </div>
