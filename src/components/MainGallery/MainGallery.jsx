@@ -48,7 +48,7 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/Thumbnail (4).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (1).jpeg",
     sources: [
       {
         src: "/assets/videos/IMG_9082.mp4",
@@ -65,7 +65,7 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/Thumbnail (1).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (2).jpeg",
     sources: [
       {
         src: "/assets/videos/IMG_9084.mp4",
@@ -102,7 +102,7 @@ const mediaItems = [
     type: "video",
     width: 1280,
     height: 720,
-    poster: "/assets/img/gallery/Thumbnail (2).jpeg",
+    poster: "/assets/img/gallery/Thumbnail (3).jpeg",
     sources: [
       {
         src: "/assets/videos/IMG_7552.mp4",

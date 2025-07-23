@@ -38,7 +38,14 @@ const [expandedCardId, setExpandedCardId] = useState(null);
         <h1 className="card-title fs-2 py-3">{item.title}</h1>
         <p className="card-desp" style={{ fontSize: '15px' }}>{item.desp}</p>
         <h5 className="fs-6 py-3">BENEFITS:</h5>
-        <p className="card-desp" style={{ fontSize: '15px' }}>{item.benefits}</p>
+        <ul>
+          {
+            item.benefits.map((item)=>(
+              <li style={{ fontSize: '15px' }}>{item}</li>
+            ))
+          }
+        </ul>
+        {/* <p className="card-desp" style={{ fontSize: '15px' }}>{item.benefits}</p> */}
         
         {expandedCardId !== item.id && (
           <button

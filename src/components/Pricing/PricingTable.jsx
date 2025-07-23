@@ -1,17 +1,105 @@
-import React from "react";
-import PricingCard from "./PricingCard";
+import React, { useState } from "react";
 import SectionHeading from "../SectionHeading/SectionHeading";
-import Regularpackages from "./Regularpackages";
-import packages from '../../dataJson/packages.json'
-import Imgbasic from '../../../public/assets/img/Package/Basic Image.png'
-import Imgessential from '../../../public/assets/img/Package/Essential Package.png'
-import Imgpremium from '../../../public/assets/img/Package/Premium Package.png'
-
-
-
-
+import packages from '../../dataJson/packages.json';
+import Imgbasic from '../../../public/assets/img/Package/Basic Image.png';
+import Imgessential from '../../../public/assets/img/Package/Essential Package.png';
+import Imgpremium from '../../../public/assets/img/Package/Premium Package.png';
 
 const PricingTable = ({ type }) => {
+  const [flippedCard, setFlippedCard] = useState(null);
+
+  const cardData = {
+    Cars: [
+      { id: "cars-basic", title: "Basic", price: "$150", data: packages.basic, img: Imgbasic },
+      { id: "cars-essential", title: "Essential", price: "$190", data: packages.essential, img: Imgessential },
+      { id: "cars-premium", title: "Premium", price: "$230", data: packages.premium, img: Imgpremium }
+    ],
+    SUVs: [
+      { id: "suvs-basic", title: "Basic", price: "$170", data: packages.basic, img: Imgbasic },
+      { id: "suvs-essential", title: "Essential", price: "$210", data: packages.basic, img: Imgessential },
+      { id: "suvs-premium", title: "Premium", price: "$260", data: packages.basic, img: Imgpremium }
+    ],
+    Trucks: [
+      { id: "trucks-basic", title: "Basic", price: "$200", data: packages.basic, img: Imgbasic },
+      { id: "trucks-essential", title: "Essential", price: "$240", data: packages.basic, img: Imgessential },
+      { id: "trucks-premium", title: "Premium", price: "$280", data: packages.basic, img: Imgpremium }
+    ]
+  };
+
+  const renderCards = (type) => (
+    <div className="row justify-content-center">
+      {cardData[type].map((card, index) => (
+        <div className="col-lg-4 col-md-6 container-cards" key={card.id}>
+          <div
+            className="pricing-card-container"
+            data-aos="fade-up"
+            onMouseEnter={() => setFlippedCard(card.id)}
+            onMouseLeave={() => setFlippedCard(null)}
+            style={{ perspective: "1000px" }}
+          >
+            <div
+              className="pricing-card"
+              style={{
+                transform: flippedCard === card.id ? "rotateY(180deg)" : "rotateY(0deg)",
+                transition: "transform 0.6s",
+                transformStyle: "preserve-3d",
+                position: "relative",
+              }}
+            >
+              {/* Front */}
+              <div className="pricing-card-front" style={{ backfaceVisibility: "hidden" }}>
+                <div className="pricing-heading text-center">
+                  <p className="title">{card.title}</p>
+                  <h2 className="discount-price">{card.price}</h2>
+                </div>
+                <div className="option-all">
+                  {card.data.map((d, i) => (
+                    <div className="option" key={i}>
+                      <div className="icon mx-2">
+                        <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
+                      </div>
+                      <p className="title">{d}</p>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="https://form.jotform.com/251835755283263"
+                  target="_blank"
+                  className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
+                >
+                  Book now
+                </a>
+              </div>
+
+              {/* Back */}
+              <div
+                className="pricing-card-back"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  transform: "rotateY(180deg)",
+                  backfaceVisibility: "hidden",
+                }}
+              >
+                <img src={card.img} alt="cover" className="cover" />
+                <a
+                  href="https://form.jotform.com/251835755283263"
+                  target="_blank"
+                  className="btn-package-normal btn-back"
+                >
+                  Book now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <>
       {type ? (
@@ -22,446 +110,34 @@ const PricingTable = ({ type }) => {
       <div className="ak-bg pricing-section-bg-img">
         <div className="ak-height-100 ak-height-lg-50"></div>
         <div className="container">
-          {type || (
-            <>
-              
-              <div className="ak-height-50 ak-height-lg-50"></div>
-            </>
-          )}
+          {!type && <div className="ak-height-50 ak-height-lg-50"></div>}
 
- <div className="container py-5  ">
-<SectionHeading
-                title={"Popular Packages (For Full Detailing)"}
-                />
- </div>
-        
-          
-<ul class="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
-  <li class="nav-item " role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Cars</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">SUVs</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Trucks</button>
-  </li>
-  
-</ul>
-<div className="price-table-container">
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active py-5" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-   
-    <div className="row justify-content-center" >
-      <div className="col-lg-4 col-md-6 container-cards">
-        <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front">
-      <div className="pricing-heading text-center">
-        <p className="title">Basic</p>
-        <h2 className="discount-price">$150</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
+          <div className="container py-5">
+            <SectionHeading title={"Popular Packages (For Full Detailing)"} />
           </div>
-        ))}
-      </div>
-        <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>  
-    </div>
 
-    
-    <div className="pricing-card-back">
-      <img src={Imgbasic} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
+          {/* Tabs */}
+          <ul className="nav nav-tabs justify-content-center border-0 nav-style" id="myTab" role="tablist">
+            <li className="nav-item" role="presentation">
+              <button className="nav-link active" id="cars-tab" data-bs-toggle="tab" data-bs-target="#cars" type="button" role="tab" aria-selected="true">Cars</button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button className="nav-link" id="suvs-tab" data-bs-toggle="tab" data-bs-target="#suvs" type="button" role="tab" aria-selected="false">SUVs</button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button className="nav-link" id="trucks-tab" data-bs-toggle="tab" data-bs-target="#trucks" type="button" role="tab" aria-selected="false">Trucks</button>
+            </li>
+          </ul>
 
-
-      </div>
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front">
-      <div className="pricing-heading text-center">
-        <p className="title">Essential</p>
-        <h2 className="discount-price">$190</h2>
-      </div>
-      <div className="option-all">
-        {packages.essential.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
+          {/* Tab Content */}
+          <div className="tab-content price-table-container" id="myTabContent">
+            <div className="tab-pane fade show active py-5" id="cars" role="tabpanel">{renderCards("Cars")}</div>
+            <div className="tab-pane fade py-5" id="suvs" role="tabpanel">{renderCards("SUVs")}</div>
+            <div className="tab-pane fade py-5" id="trucks" role="tabpanel">{renderCards("Trucks")}</div>
           </div>
-        ))}
-      </div>
-           <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>
-          
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgessential} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front active">
-      <div className="pricing-heading text-center">
-        <p className="title">Premium</p>
-        <h2 className="discount-price">$230</h2>
-      </div>
-      <div className="option-all">
-        {packages.premium.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-          <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgpremium} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-   
-
-    </div>
-    <div class="tab-pane fade py-5" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-     <div className="row justify-content-center">
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front">
-      <div className="pricing-heading text-center">
-        <p className="title">Basic</p>
-        <h2 className="discount-price">$170</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-          <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgbasic} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front">
-      <div className="pricing-heading text-center">
-        <p className="title">Essential</p>
-        <h2 className="discount-price">$210</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-          <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgessential} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front active">
-      <div className="pricing-heading text-center">
-        <p className="title">Premium</p>
-        <h2 className="discount-price">$260</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-        <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>  
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgpremium} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
-  <div class="tab-pane fade py-5" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-     <div className="row justify-content-center">
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front">
-      <div className="pricing-heading text-center">
-        <p className="title">Basic</p>
-        <h2 className="discount-price">$200</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-         <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a> 
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgbasic} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-      <div className="col-lg-4 col-md-6 container-cards">
-         <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front">
-      <div className="pricing-heading text-center">
-        <p className="title">Essential</p>
-        <h2 className="discount-price">$240</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-       <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>   
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgessential} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-      <div className="col-lg-4 col-md-6 container-cards">
-          <div className="pricing-card-container" data-aos="fade-up">
-  <div className="pricing-card">
-    
-    <div className="pricing-card-front active">
-      <div className="pricing-heading text-center">
-        <p className="title">Premium</p>
-        <h2 className="discount-price">$280</h2>
-      </div>
-      <div className="option-all">
-        {packages.basic.map((data, i) => (
-          <div className="option" key={i}>
-            <div className="icon mx-2">
-              <img src="/assets/img/icon/price-table-icon.svg" alt="..." />
-            </div>
-            <p className="title">{data}</p>
-         
-          </div>
-        ))}
-      </div>
-          <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn btn-warning rounded-pill p-3 px-5 text-light mx-auto"
-      >
-        Book now
-      </a>
-    </div>
-
-    
-    <div className="pricing-card-back">
-      <img src={Imgpremium} alt="cover" className="cover" />
-      <a
-        href="https://form.jotform.com/251835755283263"
-        target="_blank"
-        className="btn-package-normal btn-back"
-      >
-        Book now
-      </a>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
-  </div>
         </div>
-  
-</div>
 
- 
-        </div>
-          <div className="container py-5  ">
+         <div className="container py-5  ">
 <SectionHeading
                 title={"ADD ONS"}
                 />
@@ -534,8 +210,7 @@ const PricingTable = ({ type }) => {
           </div>
           </div>
         </div>
-      
-     
+      </div>
     </>
   );
 };
