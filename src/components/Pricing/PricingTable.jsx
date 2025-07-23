@@ -8,6 +8,27 @@ import Imgpremium from '../../../public/assets/img/Package/Premium Package.png';
 const PricingTable = ({ type }) => {
   const [flippedCard, setFlippedCard] = useState(null);
 
+  const handleCardFlip = (id) => {
+    // Flip on tap/click
+    if (flippedCard === id) {
+      setFlippedCard(null); // flip back
+    } else {
+      setFlippedCard(id); // flip
+    }
+  };
+
+  const handleMouseEnter = (id) => {
+    if (window.innerWidth > 768) {
+      setFlippedCard(id);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth > 768) {
+      setFlippedCard(null);
+    }
+  };
+
   const cardData = {
     Cars: [
       { id: "cars-basic", title: "Basic", price: "$150", data: packages.basic, img: Imgbasic },
@@ -26,16 +47,17 @@ const PricingTable = ({ type }) => {
     ]
   };
 
-  const renderCards = (type) => (
+  const renderCards = (vehicleType) => (
     <div className="row justify-content-center">
-      {cardData[type].map((card, index) => (
+      {cardData[vehicleType].map((card) => (
         <div className="col-lg-4 col-md-6 container-cards" key={card.id}>
           <div
             className="pricing-card-container"
             data-aos="fade-up"
-            onMouseEnter={() => setFlippedCard(card.id)}
-            onMouseLeave={() => setFlippedCard(null)}
-            style={{ perspective: "1000px" }}
+            onMouseEnter={() => handleMouseEnter(card.id)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleCardFlip(card.id)}
+            style={{ perspective: "1000px", cursor: "pointer" }}
           >
             <div
               className="pricing-card"
@@ -43,7 +65,7 @@ const PricingTable = ({ type }) => {
                 transform: flippedCard === card.id ? "rotateY(180deg)" : "rotateY(0deg)",
                 transition: "transform 0.6s",
                 transformStyle: "preserve-3d",
-                position: "relative",
+                position: "relative"
               }}
             >
               {/* Front */}
@@ -81,7 +103,7 @@ const PricingTable = ({ type }) => {
                   width: "100%",
                   height: "100%",
                   transform: "rotateY(180deg)",
-                  backfaceVisibility: "hidden",
+                  backfaceVisibility: "hidden"
                 }}
               >
                 <img src={card.img} alt="cover" className="cover" />
@@ -137,77 +159,45 @@ const PricingTable = ({ type }) => {
           </div>
         </div>
 
-         <div className="container py-5  ">
-<SectionHeading
-                title={"ADD ONS"}
-                />
- </div>
-      <div className="price-table-container my-5">
-        <div className="container">
-  <div className="row">
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light add-card my-2 py-4">
-      <span>Engine cleaning</span>
-      <span>$50-80</span>
-    </div>
-     </div>
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Headlight restoration</span>
-      <span>$50</span>
-    </div>
-     </div>
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Advanced paint correction</span>
-      <span>$200-300</span>
-    </div>
-     </div>
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Polishing </span>
-      <span>$120-220</span>
-    </div>
-     </div>
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Plastic trim layer of protection </span>
-      <span>$20</span>
-    </div>
-     </div>
-    <div className="col-lg-6">
-       <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Interior deodorizer</span>
-      <span>$50</span>
-    </div>
-    </div>
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Headliner spot cleaning</span>
-      <span>$30</span>
-    </div>
-     </div>
-     <div className="col-lg-6">
-      <div className="card p-2  border border-warning card p-2  border border-warning text-light d-flex add-card my-2 py-4">
-      <span>Air freshener</span>
-      <span>$10</span>
-    </div>
-     </div>
-  </div>
-
+        {/* ADD ONS Section */}
+        <div className="container py-5">
+          <SectionHeading title={"ADD ONS"} />
         </div>
-      </div>
+        <div className="price-table-container my-5">
+          <div className="container">
+            <div className="row">
+              {[
+                ["Engine cleaning", "$50-80"],
+                ["Headlight restoration", "$50"],
+                ["Advanced paint correction", "$200-300"],
+                ["Polishing", "$120-220"],
+                ["Plastic trim layer of protection", "$20"],
+                ["Interior deodorizer", "$50"],
+                ["Headliner spot cleaning", "$30"],
+                ["Air freshener", "$10"]
+              ].map(([title, price], i) => (
+                <div className="col-lg-6" key={i}>
+                  <div className="card p-2 border border-warning text-light d-flex add-card my-2 py-4">
+                    <span>{title}</span>
+                    <span>{price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
         <div className="container-fluid bg-sec py-5">
           <div className="container">
             <div className="row">
-            <div className="col-lg-7 p-3">
-              <h1 className="text-light display-3 fw-bold" >Got a project?</h1>
+              <div className="col-lg-7 p-3">
+                <h1 className="text-light display-3 fw-bold">Got a project?</h1>
+              </div>
+              <div className="col-lg-4 p-4 d-flex align-items-center">
+                <a className="common-btn" href="https://form.jotform.com/251835755283263" target="_main">Book an appointment</a>
+              </div>
             </div>
-            <div className="col-lg-4 p-4 d-flex align-items-center">
-          <a className=" common-btn" href="https://form.jotform.com/251835755283263" target="_main">Book an appointment</a>
-
-            </div>
-          </div>
           </div>
         </div>
       </div>
