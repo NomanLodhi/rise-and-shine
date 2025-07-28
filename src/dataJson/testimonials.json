@@ -1,0 +1,54 @@
+{
+  "reviews": [
+    {
+      "rating": 5,
+      "text": "Absolutely blown away by the results! My car looks brand new inside and out. The attention to detail was impressive — they didn’t miss a spot. Will definitely be booking again!",
+      "author": "Amanda R."
+    },
+    {
+      "rating": 4,
+      "text": "Shine & Drive is the real deal. They were punctual, professional, and my SUV has never looked better. The interior smells fresh and the exterior is gleaming.",
+      "author": "Jason T."
+    },
+    {
+      "rating": 5,
+      "text": "Highly recommend this detailing service! Great prices, friendly guys, and quality work. I’ve used other detailers in the past, but none came close to this level of care.",
+      "author": "Priya M."
+    },
+    {
+      "rating": 5,
+      "text": "I booked the premium package and it was worth every penny. They got out stains I thought were permanent and even restored my headlights. Amazing job.",
+      "author": "Daniel K."
+    },
+    {
+      "rating": 4,
+      "text": "My truck was a complete mess after a weekend camping trip. Shine & Drive brought it back to showroom condition. A few small spots missed, but still really solid work.",
+      "author": "Carlos F."
+    },
+    {
+      "rating": 3,
+      "text": "Fast, professional, and affordable. They took their time and made sure most things were perfect. A couple areas could’ve used more attention, but overall great value.",
+      "author": "Taylor L."
+    },
+    {
+      "rating": 5,
+      "text": "You can tell they take pride in their work. Even the small details like the vents and cup holders were spotless. I won’t take my car anywhere else.",
+      "author": "Sarah B."
+    },
+    {
+      "rating": 4,
+      "text": "Easy to book, showed up on time, and my car has never looked cleaner. I loved how convenient and hassle-free the whole process was.",
+      "author": "Mike D."
+    },
+    {
+      "rating": 5,
+      "text": "Best detailing service I’ve found in the area. I got the full package and they made my old car look like it just came off the lot. Super friendly guys too.",
+      "author": "Rachel V."
+    },
+    {
+      "rating": 5,
+      "text": "From the engine bay to the carpet, everything was spotless. They even got rid of pet hair I thought would never come out. Extremely satisfied!",
+      "author": "Omar J."
+    }
+  ]
+}
